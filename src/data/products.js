@@ -12,8 +12,7 @@ return res.data.ZMM_ARBOL_PROD.item
 }
 
 
-
-
+/*
 export const InfoProd2 = [
   {
     description: "PRODUCTO 1 ",
@@ -208,3 +207,4 @@ export const InfoProd2 = [
     img: "https://www.ceramicaitalia.com/web1/images/DetalleProducto/230009.jpg",
   },
 ];
+*/
