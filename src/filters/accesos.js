@@ -23,23 +23,23 @@ function Accesosintext(props) {
         </Card.Header>
         <Card.Body>
           <Form>
-            {["radio"].map((type) => (
+            {["checkbox"].map((type) => (
               <div key={`inline-${type}`} className="mb-3">
                 <Form.Check
                   inline
                   label="SIN ACCESO AL EXTERIOR"
-                  name="radio1"
+                  name="SINACCEXTE"
                   type={type}
-                  id="SIN-ACCESO"
+                  id="SINACCEXTE"
                   value={Ismarcado}
                   onChange={handleChange}
                   onClick={handleacceso}
                 />
                 <Form.Check
                   label="CON ACCESO AL EXTERIOR"
-                  name="radio1"
+                  name="CONACCEXTE"
                   type={type}
-                  id="CON-CCESO"
+                  id="CONACCEXTE"
                   onChange={handleChange2}
                   onClick={handleacceso}
                 />
