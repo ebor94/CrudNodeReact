@@ -9,9 +9,6 @@ import GetFormats from "../filters/ListFormat";
 import ProductList from "./listProduct";
 import {  InfoProd  } from "../data/products";
 
-
-//InfoProd().then(val => console.log(val)) 
-
 function Getproducts() {
 
   const [SUPERFICIE, SETSUPERFICIE] = useState([]);
