@@ -40,6 +40,7 @@ function Accesosintext(props) {
                   name="CONACCEXTE"
                   type={type}
                   id="CONACCEXTE"
+                  value={Ismarcado}
                   onChange={handleChange2}
                   onClick={handleacceso}
                 />
