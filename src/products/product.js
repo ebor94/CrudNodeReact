@@ -23,10 +23,6 @@ function Getproducts() {
   const [TAMANO, SETTAMANO] = useState([]);
 
 
-
-  //const userList = InfoProd();
-  //console.log(userList ); // Promise  <pending> 
-
   const [userList, setUserList] = useState([]);
 
   useEffect(() => {
@@ -36,10 +32,7 @@ function Getproducts() {
         // handle any error state, rejected promises, etc..
       });
   }, []);
-  //console.log(userList)
- /*  InfoProd().then((result)=> {
-  console.log(userList) // "Some desired value"
-  }) */
+
 
   const filteredProduct = userList.filter(
     (product) => SUPERFICIE.length === 0 || SUPERFICIE.includes(product.SUPERFICIE)
