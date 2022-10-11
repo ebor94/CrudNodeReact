@@ -4,24 +4,23 @@ import { useState } from "react";
 import Col from "react-bootstrap/Col";
 
 function CheckInlineExample(props) {
-  const [Ismarcado, setismarcado] = useState(true);
+  const [Ismarcadoresidencial, setIsmarcadoresidencial] = useState(true);
+  const [Ismarcadocomercial, setismarcadocomercial] = useState(true);
+  
 
-  const { handlareas } = props;
 
-  const handleChange = () => {
-    setismarcado((current) => !current);
+  const { handleresidencial } = props;
+  const { handlecomercial } = props;
+
+  const handleChange = (e) => {
+    setIsmarcadoresidencial((current) => !current);
   };
 
-  const handleChange2 = () => {
-    setismarcado((current) => !current);
+  const handleChange2 = () => {   
+    setismarcadocomercial((current) => !current);
   };
 
-  const handleChange3 = () => {
-    setismarcado((current) => !current);
-  };
-  const handleChange4 = (evnt) => {
-    setismarcado((current) => !current);
-  };
+ 
 
   return (
     <Col md={6} xs={12} className="mt-3">
@@ -35,9 +34,9 @@ function CheckInlineExample(props) {
               <div key={`inline-${type}`} className="mb-3">
                 <Form.Check
                   inline
-                  value={Ismarcado}
+                  value={Ismarcadoresidencial}
                   onChange={handleChange}
-                  onClick={handlareas}
+                  onClick={handleresidencial}
                   label="AREAS RESIDENCIALES"
                   name="AREARESIDENCIAL"
                   type={type}
@@ -45,9 +44,9 @@ function CheckInlineExample(props) {
                 />
                 <Form.Check
                   inline
-                  value={Ismarcado}
+                  value={Ismarcadocomercial}
                   onChange={handleChange2}
-                  onClick={handlareas}
+                  onClick={handlecomercial}
                   label="AREAS COMERCIALES"
                   name="AREACOMERCIAL"
                   type={type}
@@ -56,8 +55,8 @@ function CheckInlineExample(props) {
                 <Form.Check
                   inline
                   label="EXTERIORES"
-                  onChange={handleChange3}
-                  onClick={handlareas}
+                 // onChange={}
+                  onClick={handleresidencial}
                   name="AREAEXTERIOR"
                   type={type}
                   id={`inline-${type}-3`}
@@ -66,8 +65,8 @@ function CheckInlineExample(props) {
                   inline
                   label="AREAS INSTITUCIONALES"
                   name="AREAINSTITUCIONAL"
-                  onChange={handleChange4}
-                  onClick={handlareas}
+                  //onChange={handleChange4}
+                  onClick={handleresidencial}
                   type={type}
                   id={`inline-${type}-4`}
                 />

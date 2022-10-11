@@ -12,12 +12,13 @@ import {  InfoProd  } from "../data/products";
 function Getproducts() {
 
   const [SUPERFICIE, SETSUPERFICIE] = useState([]);
-  const [productListAreas, setproductListAreas] = useState([]);
+  const [AREARESIDENCIAL, SETAREARESIDENCIAL] = useState([]);
   const [productListacceso, setproductListacceso] = useState([]);
   const [productListSpace, setproductListSpace] = useState([]);
   const [TIPOLOGIA, SETTIPOLOGIA] = useState([]);
   const [sensacion, setsensacion] = useState([]);
   const [TAMANO, SETTAMANO] = useState([]);
+  const [AREACOMERCIAL, SETAREACOMERCIAL] =  useState([]);
 
 
   const [userList, setUserList] = useState([]);
@@ -36,8 +37,8 @@ function Getproducts() {
   )
     .filter(
       (product) =>
-        productListAreas.length === 0 ||
-        productListAreas.includes(product.productListAreas)
+      AREARESIDENCIAL.length === 0 ||
+      AREARESIDENCIAL.includes(product.AREARESIDENCIAL)
     )
     .filter(
       (product) =>
@@ -59,10 +60,10 @@ function Getproducts() {
     )
     .filter(
       (product) => TAMANO.length === 0 || TAMANO.includes(product.TAMANO)
-    );
+    )
+    .filter((product)=>AREACOMERCIAL.length === 0 || AREACOMERCIAL.includes(product.AREACOMERCIAL));
 
-  //console.log(productListuso);
-
+ 
   const handleuso = (e) => {
     SUPERFICIE.includes(e.target.name);
     SETSUPERFICIE(
@@ -71,13 +72,19 @@ function Getproducts() {
         : [...SUPERFICIE, e.target.name]
     );
   };
-  const handlareas = (e) => {
-    setproductListAreas(
-      productListAreas.includes(e.target.name)
-        ? productListAreas.filter((product) => product !== e.target.name)
-        : [...productListAreas, e.target.name]
+
+  const handleresidencial = (e) => {
+    console.log(e.target)
+    if(e.target.value === true){
+      e.target.value = "SI"
+    }else{
+      e.target.value = "NO"
+    }
+    SETAREARESIDENCIAL(
+      AREARESIDENCIAL.includes(e.target.value) ? AREARESIDENCIAL.filter((product) => product !== e.target.value): [...AREARESIDENCIAL, e.target.value]
     );
   };
+
   const handleacceso = (e) => {
     setproductListacceso(
       productListacceso.includes(e.target.name)
@@ -117,12 +124,24 @@ function Getproducts() {
     );
   };
 
+  const handlecomercial = (e) => {
+  //console.log(e.target)
+  if(e.target.value === true){
+    e.target.value = "SI"
+  }else{
+    e.target.value = "NO"
+  }
+    SETAREACOMERCIAL(      
+      AREACOMERCIAL.includes(e.target.value) ? AREACOMERCIAL.filter((product) => product !== e.target.value) : [...AREACOMERCIAL, e.target.value]
+    );
+  };
+
   return (
     <div className="container">
       <div className="row">
       
         <Usos handleuso={handleuso} />
-        <CheckInlineExample handlareas={handlareas} />
+        <CheckInlineExample handleresidencial={handleresidencial}  handlecomercial={handlecomercial} />
         <Accesosintext handleacceso={handleacceso} />
       </div>
       <div className="row">
