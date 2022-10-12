@@ -7,14 +7,15 @@ function CheckInlineExample(props) {
   const [Ismarcadoresidencial, setIsmarcadoresidencial] = useState(true);
   const [Ismarcadocomercial, setismarcadocomercial] = useState(true);
   const [Ismarcadoinstitucional, setismarcadoinstitucional] = useState(true);
-  
+  const [Ismarcadoexterior, setIsmarcadoexterior] = useState(true);
 
 
   const { handleresidencial } = props;
   const { handlecomercial } = props;
   const {handleinstitucional} = props;
+  const {handleexterior} = props;
 
-  //console.log(handleinstitucional)
+  console.log(handleexterior)
 
   const handleChangeinstitucional = (e) => {
     setismarcadoinstitucional((current) => !current);
@@ -26,6 +27,11 @@ function CheckInlineExample(props) {
 
   const handleChange2 = () => {   
     setismarcadocomercial((current) => !current);
+  };
+
+
+  const handleChangeexterior = (e) => {
+    setIsmarcadoexterior((current) => !current);
   };
 
  
@@ -48,7 +54,7 @@ function CheckInlineExample(props) {
                   label="AREAS RESIDENCIALES"
                   name="AREARESIDENCIAL"
                   type={type}
-                  id={`inline-${type}-1`}
+                  id="AREARESIDENCIAL"
                 />
                 <Form.Check
                   inline
@@ -58,16 +64,17 @@ function CheckInlineExample(props) {
                   label="AREAS COMERCIALES"
                   name="AREACOMERCIAL"
                   type={type}
-                  id={`inline-${type}-2`}
+                  id="AREACOMERCIAL"
                 />
                 <Form.Check
                   inline
                   label="EXTERIORES"
-                 // onChange={}
-                  //onClick={handleresidencial}
+                  value={Ismarcadoexterior}
+                  onChange={handleChangeexterior}
+                  onClick={handleexterior}
                   name="AREAEXTERIOR"
                   type={type}
-                  id={`inline-${type}-3`}
+                  id="EXTERIORES"
                 />
                 <Form.Check
                   inline
@@ -77,7 +84,7 @@ function CheckInlineExample(props) {
                   onChange={handleChangeinstitucional}
                   onClick={handleinstitucional}
                   type={type}
-                  id={`inline-${type}-4`}
+                  id="AREAINSTITUCIONAL"
                 />
               </div>
             ))}

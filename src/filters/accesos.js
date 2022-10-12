@@ -4,15 +4,17 @@ import Col from "react-bootstrap/Col";
 import { useState } from "react";
 
 function Accesosintext(props) {
-  const [Ismarcado, Setismarcado] = useState(true);
+  const [Ismarcadosinaccesoext, SetIsmarcadosinaccesoext] = useState(true);
+  const [Ismarcadoconaccesoext, SetIsmarcadoconaccesoext] = useState(true);
 
-  const { handleacceso } = props;
+  const { handleconaccesoext } = props;
+  const { handlesinaccesoext } = props;
 
-  const handleChange = () => {
-    Setismarcado((current) => !current);
+  const handleChangeconaccesoext = () => {
+    SetIsmarcadoconaccesoext((current) => !current);
   };
-  const handleChange2 = () => {
-    Setismarcado((current) => !current);
+  const handleChangesinaccesoext = () => {
+    SetIsmarcadosinaccesoext((current) => !current);
   };
 
   return (
@@ -31,18 +33,18 @@ function Accesosintext(props) {
                   name="SINACCEXTE"
                   type={type}
                   id="SINACCEXTE"
-                  value={Ismarcado}
-                  onChange={handleChange}
-                  onClick={handleacceso}
+                  value={Ismarcadosinaccesoext}
+                  onChange={handleChangesinaccesoext}
+                  onClick={handlesinaccesoext}
                 />
                 <Form.Check
                   label="CON ACCESO AL EXTERIOR"
                   name="CONACCEXTE"
                   type={type}
                   id="CONACCEXTE"
-                  value={Ismarcado}
-                  onChange={handleChange2}
-                  onClick={handleacceso}
+                  value={Ismarcadoconaccesoext}
+                  onChange={handleChangeconaccesoext}
+                  onClick={handleconaccesoext}
                 />
               </div>
             ))}

@@ -20,6 +20,7 @@ function Getproducts() {
   const [AREACOMERCIAL, SETAREACOMERCIAL] =  useState([]);
   const [AREARESIDENCIAL, SETAREARESIDENCIAL] = useState([]);
   const [AREAINSTITUCIONAL, SETAREAINSTITUCIONAL] = useState([]);
+  const [AREAEXTERIOR, SETAREAEXTERIOR] = useState([]);
 
 
   const [userList, setUserList] = useState([]);
@@ -43,16 +44,6 @@ function Getproducts() {
     )
     .filter(
       (product) =>
-        productListacceso.length === 0 ||
-        productListacceso.includes(product.productListacceso)
-    )
-    .filter(
-      (product) =>
-        productListSpace.length === 0 ||
-        productListSpace.includes(product.productListSpace)
-    )
-    .filter(
-      (product) =>
       TIPOLOGIA.length === 0 || TIPOLOGIA.includes(product.TIPOLOGIA)
     )
     .filter(
@@ -64,7 +55,9 @@ function Getproducts() {
     )
     .filter((product)=>AREACOMERCIAL.length === 0 || AREACOMERCIAL.includes(product.AREACOMERCIAL)
     )
-    .filter((product)=>AREAINSTITUCIONAL.length === 0 || AREAINSTITUCIONAL.includes(product.AREAINSTITUCIONAL));
+    .filter((product)=>AREAINSTITUCIONAL.length === 0 || AREAINSTITUCIONAL.includes(product.AREAINSTITUCIONAL)
+    )
+    .filter((product)=>AREAEXTERIOR.length === 0 || AREAEXTERIOR.includes(product.EXTERIOR));
 
  
   const handleuso = (e) => {
@@ -161,12 +154,28 @@ function Getproducts() {
       );
     };
 
+    const handleexterior = (e) => {
+      // console.log(e.target)
+      if(e.target.value === "true"){
+       e.target.value = "SI"
+     }
+     if(e.target.value === "false"){
+       e.target.value = "NO"
+     }
+       console.log(e.target)
+       console.log("EXTERIOR")
+    
+       SETAREAEXTERIOR(      
+        AREAEXTERIOR.includes(e.target.value) ? AREAEXTERIOR.filter((product) => product !== e.target.value) : [...AREAEXTERIOR, e.target.value]
+         );
+       };
+
   return (
     <div className="container">
       <div className="row">
       
         <Usos handleuso={handleuso} />
-        <CheckInlineExample handleresidencial={handleresidencial}  handlecomercial={handlecomercial} handleinstitucional={handleinstitucional} />
+        <CheckInlineExample handleresidencial={handleresidencial}  handlecomercial={handlecomercial} handleinstitucional={handleinstitucional}  handleexterior={handleexterior}/>
         <Accesosintext handleacceso={handleacceso} />
       </div>
       <div className="row">
