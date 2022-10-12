@@ -12,13 +12,14 @@ import {  InfoProd  } from "../data/products";
 function Getproducts() {
 
   const [SUPERFICIE, SETSUPERFICIE] = useState([]);
-  const [AREARESIDENCIAL, SETAREARESIDENCIAL] = useState([]);
   const [productListacceso, setproductListacceso] = useState([]);
   const [productListSpace, setproductListSpace] = useState([]);
   const [TIPOLOGIA, SETTIPOLOGIA] = useState([]);
   const [sensacion, setsensacion] = useState([]);
   const [TAMANO, SETTAMANO] = useState([]);
   const [AREACOMERCIAL, SETAREACOMERCIAL] =  useState([]);
+  const [AREARESIDENCIAL, SETAREARESIDENCIAL] = useState([]);
+  const [AREAINSTITUCIONAL, SETAREAINSTITUCIONAL] = useState([]);
 
 
   const [userList, setUserList] = useState([]);
@@ -61,7 +62,9 @@ function Getproducts() {
     .filter(
       (product) => TAMANO.length === 0 || TAMANO.includes(product.TAMANO)
     )
-    .filter((product)=>AREACOMERCIAL.length === 0 || AREACOMERCIAL.includes(product.AREACOMERCIAL));
+    .filter((product)=>AREACOMERCIAL.length === 0 || AREACOMERCIAL.includes(product.AREACOMERCIAL)
+    )
+    .filter((product)=>AREAINSTITUCIONAL.length === 0 || AREAINSTITUCIONAL.includes(product.AREAINSTITUCIONAL));
 
  
   const handleuso = (e) => {
@@ -75,11 +78,14 @@ function Getproducts() {
 
   const handleresidencial = (e) => {
     console.log(e.target)
-    if(e.target.value === true){
+    if(e.target.value === "true"){
       e.target.value = "SI"
-    }else{
+    }
+    if(e.target.value === "false"){
       e.target.value = "NO"
     }
+      console.log(e.target)
+      console.log("residencial")
     SETAREARESIDENCIAL(
       AREARESIDENCIAL.includes(e.target.value) ? AREARESIDENCIAL.filter((product) => product !== e.target.value): [...AREARESIDENCIAL, e.target.value]
     );
@@ -125,23 +131,42 @@ function Getproducts() {
   };
 
   const handlecomercial = (e) => {
-  //console.log(e.target)
-  if(e.target.value === true){
+  
+  if(e.target.value === "true"){
     e.target.value = "SI"
-  }else{
+  }
+  if(e.target.value === "false"){
     e.target.value = "NO"
   }
+  console.log(e.target)
+  console.log("comercial")
     SETAREACOMERCIAL(      
       AREACOMERCIAL.includes(e.target.value) ? AREACOMERCIAL.filter((product) => product !== e.target.value) : [...AREACOMERCIAL, e.target.value]
     );
   };
+
+  const handleinstitucional = (e) => {
+   // console.log(e.target)
+   if(e.target.value === "true"){
+    e.target.value = "SI"
+  }
+  if(e.target.value === "false"){
+    e.target.value = "NO"
+  }
+    console.log(e.target)
+    console.log("institucional")
+ 
+    SETAREAINSTITUCIONAL(      
+      AREAINSTITUCIONAL.includes(e.target.value) ? AREAINSTITUCIONAL.filter((product) => product !== e.target.value) : [...AREAINSTITUCIONAL, e.target.value]
+      );
+    };
 
   return (
     <div className="container">
       <div className="row">
       
         <Usos handleuso={handleuso} />
-        <CheckInlineExample handleresidencial={handleresidencial}  handlecomercial={handlecomercial} />
+        <CheckInlineExample handleresidencial={handleresidencial}  handlecomercial={handlecomercial} handleinstitucional={handleinstitucional} />
         <Accesosintext handleacceso={handleacceso} />
       </div>
       <div className="row">

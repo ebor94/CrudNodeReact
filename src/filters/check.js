@@ -6,13 +6,21 @@ import Col from "react-bootstrap/Col";
 function CheckInlineExample(props) {
   const [Ismarcadoresidencial, setIsmarcadoresidencial] = useState(true);
   const [Ismarcadocomercial, setismarcadocomercial] = useState(true);
+  const [Ismarcadoinstitucional, setismarcadoinstitucional] = useState(true);
   
 
 
   const { handleresidencial } = props;
   const { handlecomercial } = props;
+  const {handleinstitucional} = props;
 
-  const handleChange = (e) => {
+  //console.log(handleinstitucional)
+
+  const handleChangeinstitucional = (e) => {
+    setismarcadoinstitucional((current) => !current);
+  };
+
+  const handleChangeresidencial = (e) => {
     setIsmarcadoresidencial((current) => !current);
   };
 
@@ -35,7 +43,7 @@ function CheckInlineExample(props) {
                 <Form.Check
                   inline
                   value={Ismarcadoresidencial}
-                  onChange={handleChange}
+                  onChange={handleChangeresidencial}
                   onClick={handleresidencial}
                   label="AREAS RESIDENCIALES"
                   name="AREARESIDENCIAL"
@@ -56,7 +64,7 @@ function CheckInlineExample(props) {
                   inline
                   label="EXTERIORES"
                  // onChange={}
-                  onClick={handleresidencial}
+                  //onClick={handleresidencial}
                   name="AREAEXTERIOR"
                   type={type}
                   id={`inline-${type}-3`}
@@ -65,8 +73,9 @@ function CheckInlineExample(props) {
                   inline
                   label="AREAS INSTITUCIONALES"
                   name="AREAINSTITUCIONAL"
-                  //onChange={handleChange4}
-                  onClick={handleresidencial}
+                  value={Ismarcadoinstitucional}
+                  onChange={handleChangeinstitucional}
+                  onClick={handleinstitucional}
                   type={type}
                   id={`inline-${type}-4`}
                 />
