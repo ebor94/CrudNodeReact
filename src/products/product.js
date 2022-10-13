@@ -14,7 +14,7 @@ function Getproducts() {
   const [SUPERFICIE, SETSUPERFICIE] = useState([]);
   const [productListSpace, setproductListSpace] = useState([]);
   const [TIPOLOGIA, SETTIPOLOGIA] = useState([]);
-  const [sensacion, setsensacion] = useState([]);
+  const [SENSACION, SETSENSACION] = useState([]);
   const [TAMANO, SETTAMANO] = useState([]);
   const [AREACOMERCIAL, SETAREACOMERCIAL] =  useState([]);
   const [AREARESIDENCIAL, SETAREARESIDENCIAL] = useState([]);
@@ -33,24 +33,15 @@ function Getproducts() {
   }, []);
 
 
-  const filteredProduct = userList.filter(
-    (product) => SUPERFICIE.length === 0 || SUPERFICIE.includes(product.SUPERFICIE)
-  )
-    .filter(
-      (product) =>
-      AREARESIDENCIAL.length === 0 ||
-      AREARESIDENCIAL.includes(product.AREARESIDENCIAL)
+  const filteredProduct = userList.filter((product) => SUPERFICIE.length === 0 || SUPERFICIE.includes(product.SUPERFICIE)
+     )
+    .filter((product) => AREARESIDENCIAL.length === 0 || AREARESIDENCIAL.includes(product.AREARESIDENCIAL)
     )
-    .filter(
-      (product) =>
-      TIPOLOGIA.length === 0 || TIPOLOGIA.includes(product.TIPOLOGIA)
+    .filter((product) =>TIPOLOGIA.length === 0 || TIPOLOGIA.includes(product.TIPOLOGIA)
     )
-    .filter(
-      (product) =>
-        sensacion.length === 0 || sensacion.includes(product.sensacion)
+    .filter((product) => SENSACION.length === 0 || SENSACION.includes(product.sensacion)
     )
-    .filter(
-      (product) => TAMANO.length === 0 || TAMANO.includes(product.TAMANO)
+    .filter((product) => TAMANO.length === 0 || TAMANO.includes(product.TAMANO)
     )
     .filter((product)=>AREACOMERCIAL.length === 0 || AREACOMERCIAL.includes(product.AREACOMERCIAL)
     )
@@ -83,38 +74,29 @@ function Getproducts() {
 
   const handleSpace = (e) => {
     setproductListSpace(
-      productListSpace.includes(e.target.name)
-        ? productListSpace.filter((product) => product !== e.target.name)
-        : [...productListSpace, e.target.name]
+      productListSpace.includes(e.target.name)? productListSpace.filter((product) => product !== e.target.name): [...productListSpace, e.target.name]
     );
   };
 
   const handletipologia = (e) => {
     SETTIPOLOGIA(
-      TIPOLOGIA.includes(e.target.name)
-        ? TIPOLOGIA.filter((product) => product !== e.target.name)
-        : [...TIPOLOGIA, e.target.name]
+      TIPOLOGIA.includes(e.target.name)? TIPOLOGIA.filter((product) => product !== e.target.name) : [...TIPOLOGIA, e.target.name]
     );
   };
 
   const handleSensation = (e) => {
-    setsensacion(
-      sensacion.includes(e.target.name)
-        ? sensacion.filter((product) => product !== e.target.name)
-        : [...sensacion, e.target.name]
+    SETSENSACION(
+      SENSACION.includes(e.target.name)? SENSACION.filter((product) => product !== e.target.name): [...SENSACION, e.target.name]
     );
   };
   const handleFormat = (e) => {
     SETTAMANO(
-      TAMANO.includes(e.target.name)
-        ? TAMANO.filter((product) => product !== e.target.name)
-        : [...TAMANO, e.target.name]
+      TAMANO.includes(e.target.name)? TAMANO.filter((product) => product !== e.target.name): [...TAMANO, e.target.name]
     );
   };
 
   const handlecomercial = (e) => {
   
- 
   console.log("comercial")
     SETAREACOMERCIAL(      
       AREACOMERCIAL.includes(e.target.value) ? AREACOMERCIAL.filter((product) => product !== e.target.value) : [...AREACOMERCIAL, e.target.value]
@@ -122,11 +104,9 @@ function Getproducts() {
   };
 
   const handleinstitucional = (e) => {
-   // console.log(e.target)
-  
+   // console.log(e.target)  
     console.log(e.target)
-    console.log("institucional")
- 
+    console.log("institucional") 
     SETAREAINSTITUCIONAL(      
       AREAINSTITUCIONAL.includes(e.target.value) ? AREAINSTITUCIONAL.filter((product) => product !== e.target.value) : [...AREAINSTITUCIONAL, e.target.value]
       );
