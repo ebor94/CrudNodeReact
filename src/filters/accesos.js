@@ -7,8 +7,8 @@ function Accesosintext(props) {
   const [Ismarcadosinaccesoext, SetIsmarcadosinaccesoext] = useState(true);
   const [Ismarcadoconaccesoext, SetIsmarcadoconaccesoext] = useState(true);
 
-  const { handleconaccesoext } = props;
-  const { handlesinaccesoext } = props;
+  const { handleconacceso } = props;
+  const { handlesinacceso } = props;
 
   const handleChangeconaccesoext = () => {
     SetIsmarcadoconaccesoext((current) => !current);
@@ -35,7 +35,7 @@ function Accesosintext(props) {
                   id="SINACCEXTE"
                   value={Ismarcadosinaccesoext}
                   onChange={handleChangesinaccesoext}
-                  onClick={handlesinaccesoext}
+                  onClick={handlesinacceso}
                 />
                 <Form.Check
                   label="CON ACCESO AL EXTERIOR"
@@ -44,7 +44,7 @@ function Accesosintext(props) {
                   id="CONACCEXTE"
                   value={Ismarcadoconaccesoext}
                   onChange={handleChangeconaccesoext}
-                  onClick={handleconaccesoext}
+                  onClick={handleconacceso}
                 />
               </div>
             ))}

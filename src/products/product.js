@@ -21,8 +21,8 @@ function Getproducts() {
   const [AREARESIDENCIAL, SETAREARESIDENCIAL] = useState([]);
   const [AREAINSTITUCIONAL, SETAREAINSTITUCIONAL] = useState([]);
   const [AREAEXTERIOR, SETAREAEXTERIOR] = useState([]);
-
-
+  const [CONACCEXTE , SETCONACCEXTE] = useState([]);
+  const [SINACCEXTE ,SETSINACCEXTE]= useState([]);
   const [userList, setUserList] = useState([]);
 
   useEffect(() => {
@@ -57,7 +57,12 @@ function Getproducts() {
     )
     .filter((product)=>AREAINSTITUCIONAL.length === 0 || AREAINSTITUCIONAL.includes(product.AREAINSTITUCIONAL)
     )
-    .filter((product)=>AREAEXTERIOR.length === 0 || AREAEXTERIOR.includes(product.EXTERIOR));
+    .filter((product)=>AREAEXTERIOR.length === 0 || AREAEXTERIOR.includes(product.EXTERIOR)
+    )
+    .filter((product)=>CONACCEXTE.length === 0 || CONACCEXTE.includes(product.CONACCEXTE)
+    )
+    .filter((product)=>SINACCEXTE.length === 0 || SINACCEXTE.includes(product.SINACCEXTE)
+    );
 
  
   const handleuso = (e) => {
@@ -169,6 +174,34 @@ function Getproducts() {
         AREAEXTERIOR.includes(e.target.value) ? AREAEXTERIOR.filter((product) => product !== e.target.value) : [...AREAEXTERIOR, e.target.value]
          );
        };
+   const  handleconacceso=(e)=>{
+    if(e.target.value === "true"){
+      e.target.value = "SI"
+    }
+    if(e.target.value === "false"){
+      e.target.value = "NO"
+    }
+      console.log(e.target)
+      console.log("con acceso ext")
+
+    SETCONACCEXTE(
+      CONACCEXTE.includes(e.target.value) ?  CONACCEXTE.filter((product) => product !== e.target.value) : [...CONACCEXTE, e.target.value]
+    )
+  }; 
+    const  handlesinacceso=(e)=>{
+      if(e.target.value === "true"){
+        e.target.value = "SI"
+      }
+      if(e.target.value === "false"){
+        e.target.value = "NO"
+      }
+        console.log(e.target)
+        console.log("con acceso ext")
+  
+      SETSINACCEXTE(
+        SINACCEXTE.includes(e.target.value) ?  SINACCEXTE.filter((product) => product !== e.target.value) : [...SINACCEXTE, e.target.value]
+      )
+   };   
 
   return (
     <div className="container">
@@ -176,7 +209,7 @@ function Getproducts() {
       
         <Usos handleuso={handleuso} />
         <CheckInlineExample handleresidencial={handleresidencial}  handlecomercial={handlecomercial} handleinstitucional={handleinstitucional}  handleexterior={handleexterior}/>
-        <Accesosintext handleacceso={handleacceso} />
+        <Accesosintext handleconacceso={handleconacceso} handlesinacceso={handlesinacceso} />
       </div>
       <div className="row">
         <Space handleSpace={handleSpace} />
