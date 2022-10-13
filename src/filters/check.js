@@ -15,7 +15,7 @@ function CheckInlineExample(props) {
   const {handleinstitucional} = props;
   const {handleexterior} = props;
 
-  console.log(handleexterior)
+  //console.log(handleexterior)
 
   const handleChangeinstitucional = (e) => {
     setismarcadoinstitucional((current) => !current);

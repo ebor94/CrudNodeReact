@@ -12,7 +12,6 @@ import {  InfoProd  } from "../data/products";
 function Getproducts() {
 
   const [SUPERFICIE, SETSUPERFICIE] = useState([]);
-  const [productListacceso, setproductListacceso] = useState([]);
   const [productListSpace, setproductListSpace] = useState([]);
   const [TIPOLOGIA, SETTIPOLOGIA] = useState([]);
   const [sensacion, setsensacion] = useState([]);
@@ -75,25 +74,10 @@ function Getproducts() {
   };
 
   const handleresidencial = (e) => {
-    console.log(e.target)
-    if(e.target.value === "true"){
-      e.target.value = "SI"
-    }
-    if(e.target.value === "false"){
-      e.target.value = "NO"
-    }
-      console.log(e.target)
+
       console.log("residencial")
     SETAREARESIDENCIAL(
       AREARESIDENCIAL.includes(e.target.value) ? AREARESIDENCIAL.filter((product) => product !== e.target.value): [...AREARESIDENCIAL, e.target.value]
-    );
-  };
-
-  const handleacceso = (e) => {
-    setproductListacceso(
-      productListacceso.includes(e.target.name)
-        ? productListacceso.filter((product) => product !== e.target.name)
-        : [...productListacceso, e.target.name]
     );
   };
 
@@ -130,13 +114,7 @@ function Getproducts() {
 
   const handlecomercial = (e) => {
   
-  if(e.target.value === "true"){
-    e.target.value = "SI"
-  }
-  if(e.target.value === "false"){
-    e.target.value = "NO"
-  }
-  console.log(e.target)
+ 
   console.log("comercial")
     SETAREACOMERCIAL(      
       AREACOMERCIAL.includes(e.target.value) ? AREACOMERCIAL.filter((product) => product !== e.target.value) : [...AREACOMERCIAL, e.target.value]
@@ -145,12 +123,7 @@ function Getproducts() {
 
   const handleinstitucional = (e) => {
    // console.log(e.target)
-   if(e.target.value === "true"){
-    e.target.value = "SI"
-  }
-  if(e.target.value === "false"){
-    e.target.value = "NO"
-  }
+  
     console.log(e.target)
     console.log("institucional")
  
@@ -160,14 +133,7 @@ function Getproducts() {
     };
 
     const handleexterior = (e) => {
-      // console.log(e.target)
-      if(e.target.value === "true"){
-       e.target.value = "SI"
-     }
-     if(e.target.value === "false"){
-       e.target.value = "NO"
-     }
-       console.log(e.target)
+     
        console.log("EXTERIOR")
     
        SETAREAEXTERIOR(      
@@ -175,13 +141,7 @@ function Getproducts() {
          );
        };
    const  handleconacceso=(e)=>{
-    if(e.target.value === "true"){
-      e.target.value = "SI"
-    }
-    if(e.target.value === "false"){
-      e.target.value = "NO"
-    }
-      console.log(e.target)
+  
       console.log("con acceso ext")
 
     SETCONACCEXTE(
@@ -189,13 +149,7 @@ function Getproducts() {
     )
   }; 
     const  handlesinacceso=(e)=>{
-      if(e.target.value === "true"){
-        e.target.value = "SI"
-      }
-      if(e.target.value === "false"){
-        e.target.value = "NO"
-      }
-        console.log(e.target)
+
         console.log("con acceso ext")
   
       SETSINACCEXTE(
