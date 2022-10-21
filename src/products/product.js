@@ -24,14 +24,13 @@ function Getproducts() {
   const [SINACCEXTE ,SETSINACCEXTE]= useState([]);
   const [userList, setUserList] = useState([]);
 
+ 
   useEffect(() => {
-    InfoProd()
-      .then(userList => setUserList(userList))
-      .catch(error => {
-        // handle any error state, rejected promises, etc..
-      });
-  }, []);
-
+     if (typeof localStorage.store !== "undefined" || localStorage.store !== "") {
+       InfoProd().then((userList) => setUserList(userList));
+     }
+   }, []);
+ 
 
   const filteredProduct = userList.filter((product) => SUPERFICIE.length === 0 || SUPERFICIE.includes(product.SUPERFICIE)
      )
@@ -139,6 +138,7 @@ function Getproducts() {
 
   return (
     <div className="container">
+
       <div className="row">
       
         <Usos handleuso={handleuso} />
