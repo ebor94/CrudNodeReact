@@ -1,7 +1,7 @@
 {
   "name": "front-react",
   "version": "0.1.0",
-  "homepage":"https://ebor94.github.io/CrudNodeReact",
+  "homepage":"https://soul.ceramicaitalia.com",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
