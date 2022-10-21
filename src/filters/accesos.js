@@ -21,7 +21,7 @@ function Accesosintext(props) {
     <Col xs={12} md={3} className="mt-3">
       <Card>
         <Card.Header className="bg-info text-white">
-          ¿Cuál es su espacio a remodelar?{" "}
+          ¿Tipo de acceso?
         </Card.Header>
         <Card.Body>
           <Form>
