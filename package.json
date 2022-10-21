@@ -1,7 +1,7 @@
 {
   "name": "front-react",
   "version": "0.1.0",
-  "homepage":"https://soul.ceramicaitalia.com",
+  "homepage":"https://ebor94.github.io/CrudNodeReact",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy":"npm run build && echo soul.ceramicaitalia.com > ./build/CNAME",
+    "predeploy":"npm run build",
     "deploy":"gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
