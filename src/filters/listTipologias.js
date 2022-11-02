@@ -5,7 +5,7 @@ import { useState } from "react";
 import Col from "react-bootstrap/col";
 
 function GetTipologias(props) {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(true);
 
   const { handletipologia } = props;
 

@@ -28,7 +28,7 @@ export const Sensationss = [
     idSap: 27,
   },
   {
-    name: "CELIDEZ",
+    name: "CALIDEZ",
     idSap: 28,
   },
   {

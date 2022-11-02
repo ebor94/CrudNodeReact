@@ -7,143 +7,198 @@ import Tipologia from "../filters/listTipologias";
 import GetSensationss from "../filters/listSesantions";
 import GetFormats from "../filters/ListFormat";
 import ProductList from "./listProduct";
-import {  InfoProd  } from "../data/products";
+import { InfoProd } from "../data/products";
 
 function Getproducts() {
-
   const [SUPERFICIE, SETSUPERFICIE] = useState([]);
   const [productListSpace, setproductListSpace] = useState([]);
   const [TIPOLOGIA, SETTIPOLOGIA] = useState([]);
-  const [SENSACION, SETSENSACION] = useState([]);
+  const [SENSACION] = useState([]);
   const [TAMANO, SETTAMANO] = useState([]);
-  const [AREACOMERCIAL, SETAREACOMERCIAL] =  useState([]);
+  const [AREACOMERCIAL, SETAREACOMERCIAL] = useState([]);
   const [AREARESIDENCIAL, SETAREARESIDENCIAL] = useState([]);
   const [AREAINSTITUCIONAL, SETAREAINSTITUCIONAL] = useState([]);
   const [AREAEXTERIOR, SETAREAEXTERIOR] = useState([]);
-  const [CONACCEXTE , SETCONACCEXTE] = useState([]);
-  const [SINACCEXTE ,SETSINACCEXTE]= useState([]);
+  const [CONACCEXTE, SETCONACCEXTE] = useState([]);
+  const [SINACCEXTE, SETSINACCEXTE] = useState([]);
   const [userList, setUserList] = useState([]);
+    const [userList2, setUserList2] = useState([]);
+  
+  
 
- 
   useEffect(() => {
-     if (typeof localStorage.store !== "undefined" || localStorage.store !== "") {
-       InfoProd().then((userList) => setUserList(userList));
-     }
-   }, []);
- 
+    if (
+      typeof localStorage.store !== "undefined" ||
+      localStorage.store !== ""
+    ) {
+      InfoProd().then((userList) => setUserList(userList));
+      InfoProd().then((userList2) => setUserList2(userList2));
+    
+    }
+  }, []);
 
-  const filteredProduct = userList.filter((product) => SUPERFICIE.length === 0 || SUPERFICIE.includes(product.SUPERFICIE)
-     )
-    .filter((product) => AREARESIDENCIAL.length === 0 || AREARESIDENCIAL.includes(product.AREARESIDENCIAL)
+  const filteredProduct = userList
+    .filter(
+      (product) =>
+        SUPERFICIE.length === 0 || SUPERFICIE.includes(product.SUPERFICIE)
     )
-    .filter((product) =>TIPOLOGIA.length === 0 || TIPOLOGIA.includes(product.TIPOLOGIA)
+    .filter(
+      (product) =>
+        AREARESIDENCIAL.length === 0 ||
+        AREARESIDENCIAL.includes(product.AREARESIDENCIAL)
     )
-    .filter((product) => SENSACION.length === 0 || SENSACION.includes(product.sensacion)
+    .filter(
+      (product) =>
+        TIPOLOGIA.length === 0 || TIPOLOGIA.includes(product.TIPOLOGIA)
     )
-    .filter((product) => TAMANO.length === 0 || TAMANO.includes(product.TAMANO)
+    .filter(
+      (product) =>
+        SENSACION.length === 0 || SENSACION.includes(product.SENSACION)
     )
-    .filter((product)=>AREACOMERCIAL.length === 0 || AREACOMERCIAL.includes(product.AREACOMERCIAL)
+    .filter(
+      (product) => TAMANO.length === 0 || TAMANO.includes(product.TAMANO)
     )
-    .filter((product)=>AREAINSTITUCIONAL.length === 0 || AREAINSTITUCIONAL.includes(product.AREAINSTITUCIONAL)
+    .filter(
+      (product) =>
+        AREACOMERCIAL.length === 0 ||
+        AREACOMERCIAL.includes(product.AREACOMERCIAL)
     )
-    .filter((product)=>AREAEXTERIOR.length === 0 || AREAEXTERIOR.includes(product.EXTERIOR)
+    .filter(
+      (product) =>
+        AREAINSTITUCIONAL.length === 0 ||
+        AREAINSTITUCIONAL.includes(product.AREAINSTITUCIONAL)
     )
-    .filter((product)=>CONACCEXTE.length === 0 || CONACCEXTE.includes(product.CONACCEXTE)
+    .filter(
+      (product) =>
+        AREAEXTERIOR.length === 0 || AREAEXTERIOR.includes(product.EXTERIOR)
     )
-    .filter((product)=>SINACCEXTE.length === 0 || SINACCEXTE.includes(product.SINACCEXTE)
+    .filter(
+      (product) =>
+        CONACCEXTE.length === 0 || CONACCEXTE.includes(product.CONACCEXTE)
+    )
+    .filter(
+      (product) =>
+        SINACCEXTE.length === 0 || SINACCEXTE.includes(product.SINACCEXTE)
     );
 
- 
   const handleuso = (e) => {
-    SUPERFICIE.includes(e.target.name);
-    SETSUPERFICIE(
-      SUPERFICIE.includes(e.target.name)
-        ? SUPERFICIE.filter((product) => product !== e.target.name)
-        : [...SUPERFICIE, e.target.name]
-    );
+   
+    if (e.target.checked){
+      SETSUPERFICIE(
+        SUPERFICIE.includes(e.target.name)
+          ? SUPERFICIE.filter((product) => product === e.target.name)
+          : [...SUPERFICIE, e.target.name]
+      );
+       
+    }else{
+        SETSUPERFICIE(
+          SUPERFICIE.includes(e.target.name)
+            ? SUPERFICIE.filter((product) => product !== e.target.name)
+            : [...SUPERFICIE, e.target.name]
+        );
+    }
+
   };
 
   const handleresidencial = (e) => {
-
-      console.log("residencial")
+    //console.log("residencial")
     SETAREARESIDENCIAL(
-      AREARESIDENCIAL.includes(e.target.value) ? AREARESIDENCIAL.filter((product) => product !== e.target.value): [...AREARESIDENCIAL, e.target.value]
+      AREARESIDENCIAL.includes(e.target.value)
+        ? AREARESIDENCIAL.filter((product) => product !== e.target.value)
+        : [...AREARESIDENCIAL, e.target.value]
     );
   };
 
   const handleSpace = (e) => {
     setproductListSpace(
-      productListSpace.includes(e.target.name)? productListSpace.filter((product) => product !== e.target.name): [...productListSpace, e.target.name]
+      productListSpace.includes(e.target.name)
+        ? productListSpace.filter((product) => product !== e.target.name)
+        : [...productListSpace, e.target.name]
     );
   };
 
   const handletipologia = (e) => {
+    if (e.target.checked) {
+      console.log(TIPOLOGIA.includes(e.target.name));
+      console.log(TIPOLOGIA.filter((product) => product !== e.target.name));
+      console.log([...TIPOLOGIA, e.target.name]);
+    }
     SETTIPOLOGIA(
-      TIPOLOGIA.includes(e.target.name)? TIPOLOGIA.filter((product) => product !== e.target.name) : [...TIPOLOGIA, e.target.name]
+      TIPOLOGIA.includes(e.target.name)
+        ? TIPOLOGIA.filter((product) => product !== e.target.name)
+        : [...TIPOLOGIA, e.target.name]
     );
   };
 
-  const handleSensation = (e) => {
-    SETSENSACION(
-      SENSACION.includes(e.target.name)? SENSACION.filter((product) => product !== e.target.name): [...SENSACION, e.target.name]
-    );
-  };
-  const handleFormat = (e) => {
-    SETTAMANO(
-      TAMANO.includes(e.target.name)? TAMANO.filter((product) => product !== e.target.name): [...TAMANO, e.target.name]
-    );
+  const handleSensation = (e) => {  
+    if (e.target.checked) {       
+        setUserList(
+          userList.filter((product) =>product.SENSACION.find((product) => product === e.target.name))
+       );      
+    } else {
+      setUserList(userList2);
+    }  
   };
 
+
+   const handleFormat = (e) => {
+     SETTAMANO(
+       TAMANO.includes(e.target.name)
+         ? TAMANO.filter((product) => product !== e.target.name)
+         : [...TAMANO, e.target.name]
+     );
+   };
   const handlecomercial = (e) => {
-  
-  console.log("comercial")
-    SETAREACOMERCIAL(      
-      AREACOMERCIAL.includes(e.target.value) ? AREACOMERCIAL.filter((product) => product !== e.target.value) : [...AREACOMERCIAL, e.target.value]
+    SETAREACOMERCIAL(
+      AREACOMERCIAL.includes(e.target.value)
+        ? AREACOMERCIAL.filter((product) => product !== e.target.value)
+        : [...AREACOMERCIAL, e.target.value]
+    );
+  };
+  const handleinstitucional = (e) => {    
+    SETAREAINSTITUCIONAL(
+      AREAINSTITUCIONAL.includes(e.target.value)
+        ? AREAINSTITUCIONAL.filter((product) => product !== e.target.value)
+        : [...AREAINSTITUCIONAL, e.target.value]
     );
   };
 
-  const handleinstitucional = (e) => {
-   // console.log(e.target)  
-    console.log(e.target)
-    console.log("institucional") 
-    SETAREAINSTITUCIONAL(      
-      AREAINSTITUCIONAL.includes(e.target.value) ? AREAINSTITUCIONAL.filter((product) => product !== e.target.value) : [...AREAINSTITUCIONAL, e.target.value]
-      );
-    };
-
-    const handleexterior = (e) => {
-     
-       console.log("EXTERIOR")
-    
-       SETAREAEXTERIOR(      
-        AREAEXTERIOR.includes(e.target.value) ? AREAEXTERIOR.filter((product) => product !== e.target.value) : [...AREAEXTERIOR, e.target.value]
-         );
-       };
-   const  handleconacceso=(e)=>{
-  
-      console.log("con acceso ext")
-
+  const handleexterior = (e) => {
+    SETAREAEXTERIOR(
+      AREAEXTERIOR.includes(e.target.value)
+        ? AREAEXTERIOR.filter((product) => product !== e.target.value)
+        : [...AREAEXTERIOR, e.target.value]
+    );
+  };
+  const handleconacceso = (e) => {
     SETCONACCEXTE(
-      CONACCEXTE.includes(e.target.value) ?  CONACCEXTE.filter((product) => product !== e.target.value) : [...CONACCEXTE, e.target.value]
-    )
-  }; 
-    const  handlesinacceso=(e)=>{
-
-        console.log("con acceso ext")
-  
-      SETSINACCEXTE(
-        SINACCEXTE.includes(e.target.value) ?  SINACCEXTE.filter((product) => product !== e.target.value) : [...SINACCEXTE, e.target.value]
-      )
-   };   
+      CONACCEXTE.includes(e.target.value)
+        ? CONACCEXTE.filter((product) => product !== e.target.value)
+        : [...CONACCEXTE, e.target.value]
+    );
+  };
+  const handlesinacceso = (e) => {
+    SETSINACCEXTE(
+      SINACCEXTE.includes(e.target.value)
+        ? SINACCEXTE.filter((product) => product !== e.target.value)
+        : [...SINACCEXTE, e.target.value]
+    );
+  };
 
   return (
     <div className="container">
-
       <div className="row">
-      
         <Usos handleuso={handleuso} />
-        <CheckInlineExample handleresidencial={handleresidencial}  handlecomercial={handlecomercial} handleinstitucional={handleinstitucional}  handleexterior={handleexterior}/>
-        <Accesosintext handleconacceso={handleconacceso} handlesinacceso={handlesinacceso} />
+        <CheckInlineExample
+          handleresidencial={handleresidencial}
+          handlecomercial={handlecomercial}
+          handleinstitucional={handleinstitucional}
+          handleexterior={handleexterior}
+        />
+        <Accesosintext
+          handleconacceso={handleconacceso}
+          handlesinacceso={handlesinacceso}
+        />
       </div>
       <div className="row">
         <Space handleSpace={handleSpace} />

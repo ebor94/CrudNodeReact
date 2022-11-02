@@ -14,13 +14,7 @@ function ProductList({ filteredProduct }) {
             MATERIAL,
             DESCRIPCION,
             SUPERFICIE,
-            AREACOMERCIAL,
-            AREAEXTERIOR,
-            AREAINSTITUCIONAL,
-            AREARESIDENCIAL,
-            CONACCEXTE,
-            SINACCEXTE,
-            TIPOLOGIA,
+              TIPOLOGIA,
             SENSACION,
             FORMATO,
             CANTIDAD,
@@ -40,7 +34,6 @@ function ProductList({ filteredProduct }) {
                 <ListGroup variant="flush">
                     <ListGroup.Item>{SUPERFICIE}</ListGroup.Item>
                     <ListGroup.Item>{FORMATO}</ListGroup.Item>
-                    <ListGroup.Item>{SENSACION}</ListGroup.Item>
                     <ListGroup.Item>{TIPOLOGIA}</ListGroup.Item>
                     <ListGroup.Item>{TAMANO}</ListGroup.Item>
                     <ListGroup.Item>Disponible {CANTIDAD}</ListGroup.Item>

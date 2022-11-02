@@ -3,7 +3,7 @@ import { useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
 
 function Spaces(props) {
-  const [Ismarcado, setismarcado] = useState(true);
+  const [Ismarcado, setismarcado] = useState();
 
   const handleChange = () => {
     setismarcado((current) => !current);

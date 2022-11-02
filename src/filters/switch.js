@@ -4,8 +4,8 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 
 function SwitchExample(props) {
-  const [Ismarcado, setismarcado] = useState(true);
-  const [Ismarcado2, setismarcado2] = useState(true);
+  const [Ismarcado, setismarcado] = useState();
+  const [Ismarcado2, setismarcado2] = useState();
 
   const { handleuso } = props;
 
@@ -37,7 +37,7 @@ function SwitchExample(props) {
                 value={Ismarcado}
                 onClick={handleuso}
                 onChange={handleChange}
-                type="switch"
+                type="checkbox"
                 id="custom-switch"
                 label="PISOS"
                 name="PISOS"
@@ -47,7 +47,7 @@ function SwitchExample(props) {
                 value={Ismarcado2}
                 onClick={handleuso}
                 onChange={handleChange2}
-                type="switch"
+                type="checkbox"
                 id="custom-switch"
                 label="PAREDES"
                 name="PAREDES"
