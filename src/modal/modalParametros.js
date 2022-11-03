@@ -25,7 +25,7 @@ const handleChange = (e) => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary rounded-0" onClick={handleShow}>
         Cambiar Sala de venta {localStorage.store}
       </Button>
 

@@ -25,6 +25,7 @@ function Getproducts() {
   const [userList, setUserList] = useState([]);
   const [userList2, setUserList2] = useState([]);
   const [Consec, setConsec] = useState('');
+  const [ESPACIO, SET5ESPACIO]= useState([]);
   
 
   useEffect(() => {
@@ -81,6 +82,10 @@ function Getproducts() {
     .filter(
       (product) =>
         SINACCEXTE.length === 0 || SINACCEXTE.includes(product.SINACCEXTE)
+  )
+  .filter(
+      (product) =>
+        ESPACIO.length === 0 || ESPACIO.includes(product.ESPACIO)
     );
 
   const handleuso = (e) => {
@@ -112,11 +117,15 @@ function Getproducts() {
   };
 
   const handleSpace = (e) => {
-    setproductListSpace(
-      productListSpace.includes(e.target.name)
-        ? productListSpace.filter((product) => product !== e.target.name)
-        : [...productListSpace, e.target.name]
-    );
+    if (e.target.checked) {
+      setUserList(
+        userList.filter((product) =>
+          product.ESPACIO.find((product) => product === e.target.name)
+        )
+      );
+    } else {
+      setUserList(userList2);
+    } 
   };
 
   const handletipologia = (e) => {

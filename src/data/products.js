@@ -1,10 +1,11 @@
 import axios from "axios";
-
+const url = "https://www.ceramicaitalia.com/carritosap/sala/bd/busqueda.php";
 export const InfoProd = async () => {
-  let url = "https://www.ceramicaitalia.com/carritosap/sala/bd/busqueda.php";
+ 
   let datax;
   let i;
   let sesation;
+  let space;
 
  const res = await  axios.post(url, {
        opcion: 12,
@@ -18,6 +19,8 @@ export const InfoProd = async () => {
        for (i = 0; i < datax.length; i++) { 
          sesation = datax[i].SENSACION.split("|");
          datax[i].SENSACION = sesation;
+       space = datax[i].ESPACIO.split("|");
+         datax[i].ESPACIO = space;
         }
        return datax; 
      } else {
@@ -29,4 +32,18 @@ export const InfoProd = async () => {
 
 };
 
+export const getPrice = async (material) => {
+  let price;
+  const res = await axios.post(url, {
+    opcion: 5,
+    canal: "60",
+    ofventas: "110",
+    orgventas: "1000",
+    material: material,
+    store: "1401",
+  });
+  price = Math.round(res.data.PRCTE * 1.19);
+  return price;
 
+  
+};
