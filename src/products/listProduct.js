@@ -14,8 +14,7 @@ function ProductList({ filteredProduct }) {
             MATERIAL,
             DESCRIPCION,
             SUPERFICIE,
-              TIPOLOGIA,
-            SENSACION,
+            TIPOLOGIA,
             FORMATO,
             CANTIDAD,
             TAMANO

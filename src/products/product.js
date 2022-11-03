@@ -8,6 +8,7 @@ import GetSensationss from "../filters/listSesantions";
 import GetFormats from "../filters/ListFormat";
 import ProductList from "./listProduct";
 import { InfoProd } from "../data/products";
+import { Consecutive } from "../data/consecutive";
 
 function Getproducts() {
   const [SUPERFICIE, SETSUPERFICIE] = useState([]);
@@ -22,8 +23,8 @@ function Getproducts() {
   const [CONACCEXTE, SETCONACCEXTE] = useState([]);
   const [SINACCEXTE, SETSINACCEXTE] = useState([]);
   const [userList, setUserList] = useState([]);
-    const [userList2, setUserList2] = useState([]);
-  
+  const [userList2, setUserList2] = useState([]);
+  const [Consec, setConsec] = useState('');
   
 
   useEffect(() => {
@@ -33,6 +34,7 @@ function Getproducts() {
     ) {
       InfoProd().then((userList) => setUserList(userList));
       InfoProd().then((userList2) => setUserList2(userList2));
+      Consecutive().then((Consec) => setConsec(Consec));
     
     }
   }, []);
@@ -187,6 +189,7 @@ function Getproducts() {
 
   return (
     <div className="container">
+      <label>{Consec}</label>
       <div className="row">
         <Usos handleuso={handleuso} />
         <CheckInlineExample
