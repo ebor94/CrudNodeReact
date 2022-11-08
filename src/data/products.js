@@ -1,5 +1,6 @@
 import axios from "axios";
 const url = "https://www.ceramicaitalia.com/carritosap/sala/bd/busqueda.php";
+
 export const InfoProd = async () => {
  
   let datax;
@@ -26,7 +27,9 @@ export const InfoProd = async () => {
      } else {
        return datax;
       }
-     });
+     }).catch((error) => {
+     return error;
+   });
 
   return res;
 
@@ -46,4 +49,26 @@ export const getPrice = async (material) => {
   return price;
 
   
+};
+
+export const AddDetail = async (material, description, price, quantity, discount) => {
+   const res = await axios
+     .post(url, {
+       opcion: 6,
+       code: localStorage.code,
+       material: material,
+       description: description,
+       price: price,
+       quantity: quantity,
+       store: localStorage.store,
+       discount: discount,
+       seller: localStorage.vendedor,
+     })
+     .then((response) => {
+       return response.data;
+     })
+     .catch((error) => {
+       return error;
+     });
+  return res;
 };

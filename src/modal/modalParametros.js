@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import { FiShoppingCart, FiHome, FiMenu } from "react-icons/fi";
 
 function ModalParametros() {
     const [show, setShow] = useState(false);
@@ -25,9 +25,25 @@ const handleChange = (e) => {
 
   return (
     <>
-      <Button variant="primary rounded-0" onClick={handleShow}>
-        Cambiar Sala de venta {localStorage.store}
-      </Button>
+      <a
+        className="btn btn-outline-info rounded-0 btn-lg mt-2"
+        href="https://www.ceramicaitalia.com/carritosap/sala/pedido.php"
+      >
+        <FiShoppingCart />
+      </a>
+      <button
+        className="btn btn-outline-primary rounded-0 btn-lg mt-2"
+        onClick={handleShow}
+      >
+        <FiHome />
+        {localStorage.store}
+      </button>
+      <a
+        className="btn btn-outline-secondary rounded-0 btn-lg mt-2"
+        href="https://www.ceramicaitalia.com/carritosap/sala/menu.php"
+      >
+        <FiMenu />
+      </a>
 
       <Modal
         show={show}
@@ -36,8 +52,7 @@ const handleChange = (e) => {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Parametros de venta  </Modal.Title>
-
+          <Modal.Title>Parametros de venta </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -47,7 +62,7 @@ const handleChange = (e) => {
                 aria-label="Default select example"
                 onChange={handleChange}
               >
-                <option >Seleccione</option>
+                <option>Seleccione</option>
                 <option value="1401">Cúcuta</option>
                 <option value="1402">Bucarmanga</option>
                 <option value="1416">Bogotá</option>
@@ -59,9 +74,7 @@ const handleChange = (e) => {
             </Form.Group>
           </Form>
         </Modal.Body>
-        <Modal.Footer>      
-        
-        </Modal.Footer>
+        <Modal.Footer></Modal.Footer>
       </Modal>
     </>
   );
