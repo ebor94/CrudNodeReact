@@ -53,7 +53,8 @@ const handleChange = (e) => {
       </button>
       <a
         className="btn btn-outline-info rounded-0 btn-lg mt-2"
-        href="#">
+        href="https://www.ceramicaitalia.com/carritosap/sala/pedido.php"
+      >
         <FiDollarSign />
       </a>
       <Modal
