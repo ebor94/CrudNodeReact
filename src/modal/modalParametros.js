@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import { FiShoppingCart, FiHome, FiMenu } from "react-icons/fi";
+import { FiShoppingCart, FiHome, FiUser, FiDollarSign } from "react-icons/fi";
 
 function ModalParametros() {
   const [show, setShow] = useState(false);
@@ -45,20 +45,17 @@ const handleChange = (e) => {
         <FiHome />
         {localStorage.store}
       </button>
-      <a
-        className="btn btn-outline-secondary rounded-0 btn-lg mt-2"
-        href="https://www.ceramicaitalia.com/carritosap/sala/menu.php"
-      >
-        <FiMenu />
-      </a>
       <button
         className="btn btn-outline-primary rounded-0 btn-lg mt-2"
         onClick={handleShowClient}
       >
-        <FiHome />
-        {localStorage.store}
+        <FiUser />
       </button>
-
+      <a
+        className="btn btn-outline-info rounded-0 btn-lg mt-2"
+        href="#">
+        <FiDollarSign />
+      </a>
       <Modal
         show={show}
         onHide={handleClose}
