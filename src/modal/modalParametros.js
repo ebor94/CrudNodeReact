@@ -4,9 +4,16 @@ import Form from "react-bootstrap/Form";
 import { FiShoppingCart, FiHome, FiMenu } from "react-icons/fi";
 
 function ModalParametros() {
-    const [show, setShow] = useState(false);
-    const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false);
+  const [showClient, setShowClient] = useState(false);
+  const handleShow = () => setShow(true);
+  const handleShowClient = () => setShowClient(true);
+  
+   const handleChangeClient = () => setShowClient(true);
    
+   const handleCloseClient = () => {
+     setShowClient(false);
+   };
     const handleClose = () => {       
         setShow(false);
     }
@@ -44,6 +51,13 @@ const handleChange = (e) => {
       >
         <FiMenu />
       </a>
+      <button
+        className="btn btn-outline-primary rounded-0 btn-lg mt-2"
+        onClick={handleShowClient}
+      >
+        <FiHome />
+        {localStorage.store}
+      </button>
 
       <Modal
         show={show}
@@ -61,6 +75,37 @@ const handleChange = (e) => {
               <Form.Select
                 aria-label="Default select example"
                 onChange={handleChange}
+              >
+                <option>Seleccione</option>
+                <option value="1401">Cúcuta</option>
+                <option value="1402">Bucarmanga</option>
+                <option value="1416">Bogotá</option>
+                <option value="1411">pereira</option>
+                <option value="1414">Cali</option>
+                <option value="1413">Medellin</option>
+                <option value="1419">Barranquilla</option>
+              </Form.Select>
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer></Modal.Footer>
+      </Modal>
+      <Modal
+        show={showClient}
+        onHide={handleCloseClient}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Parametros de venta </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Seleciones Sala de ventas</Form.Label>
+              <Form.Select
+                aria-label="Default select example"
+                onChange={handleChangeClient}
               >
                 <option>Seleccione</option>
                 <option value="1401">Cúcuta</option>
