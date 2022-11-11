@@ -110,11 +110,6 @@ const handleChange = (e) => {
               />
               <Form.Text className="text-muted">cedula del cliente</Form.Text>
             </Form.Group>
-
-            <Form.Group className="mb-3">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Primer Nombre</Form.Label>
               <Form.Control type="text" placeholder="Primer Nombre" />
@@ -168,11 +163,7 @@ const handleChange = (e) => {
               </Form.Select>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-          </Form>
+           </Form>
         </Modal.Body>
         <Modal.Footer></Modal.Footer>
       </Modal>
