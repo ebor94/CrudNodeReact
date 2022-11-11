@@ -95,52 +95,77 @@ const handleChange = (e) => {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Parametros de venta </Modal.Title>
+          <Modal.Title>
+            <FiUser />
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
+              <Form.Label>Identificaion</Form.Label>
+              <Form.Control
+                type="number"
+                max="11"
+                placeholder="ingrese numero de cedula"
+              />
+              <Form.Text className="text-muted">cedula del cliente</Form.Text>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+            <Form.Group className="mb-3">
+              <Form.Label>Primer Nombre</Form.Label>
+              <Form.Control type="text" placeholder="Primer Nombre" />
               <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
+                Primer Nombre del cliente
               </Form.Text>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+            <Form.Group className="mb-3">
+              <Form.Label>segundo Nombre</Form.Label>
+              <Form.Control type="text" placeholder="segundo  Nombre" />
               <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
+                segundo Nombre del cliente
               </Form.Text>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="primerapellido">
+              <Form.Label>Primer Apellido</Form.Label>
+              <Form.Control type="text" placeholder="Primer Apellido" />
+              <Form.Text className="text-muted">Primer Apellido</Form.Text>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+            <Form.Group className="mb-3" controlId="segundoapellido">
+              <Form.Label>Segundo Apellido</Form.Label>
+              <Form.Control type="text" placeholder="Segundo Apellido" />
+              <Form.Text className="text-muted">Segundo Apellido</Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
+
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="Tratamiento">Tratamiento</Form.Label>
+              <Form.Select id="Tratamiento">
+                <option value="" selected Disabled>
+                  Seleccione
+                </option>
+                <option value="Architect">ARQUITECTO</option>
+                <option value="Architect(F)">ARQUITECTA</option>
+                <option value="Design house">CASA-DISEÑO</option>
+                <option value="Desinger">DISEÑADOR</option>
+                <option value="Desinger(F)">DISEÑADORA</option>
+                <option value="Distributor-Importer">
+                  DISTRIBUIDOR-IMPORTADORA
+                </option>
+                <option value="Company">EMPRESA</option>
+                <option value="Big Surfaces">GRANDES-SUPERFICIES</option>
+                <option value="Engineer(F)">INGENIERA</option>
+                <option value="Engineer">INGENIERO</option>
+                <option value="Master">MAESTRO</option>
+                <option value="Retailer">RETAILER</option>
+                <option value="Mr.">SEÑOR</option>
+                <option value="Mr. and Mrs.">SEÑOR-SEÑORA</option>
+                <option value="Ms.">SEÑORA</option>
+              </Form.Select>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
