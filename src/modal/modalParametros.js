@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { FiShoppingCart, FiHome, FiUser, FiDollarSign } from "react-icons/fi";
+import { Button } from "react-bootstrap";
 
 function ModalParametros() {
   const [show, setShow] = useState(false);
@@ -84,10 +85,13 @@ const handleChange = (e) => {
                 <option value="1419">Barranquilla</option>
               </Form.Select>
             </Form.Group>
+            <Button variant="danger" type="submit">
+              Registrar cliente
+            </Button>
           </Form>
         </Modal.Body>
-        <Modal.Footer></Modal.Footer>
       </Modal>
+
       <Modal
         show={showClient}
         onHide={handleCloseClient}
@@ -162,8 +166,38 @@ const handleChange = (e) => {
                 <option value="Ms.">SEÑORA</option>
               </Form.Select>
             </Form.Group>
-
-           </Form>
+            <Form.Group className="mb-3" controlId="Telefono">
+              <Form.Label>Telefono</Form.Label>
+              <Form.Control type="text" placeholder="Telefono" />
+              <Form.Text className="text-muted">Telefono</Form.Text>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="email" />
+              <Form.Text className="text-muted">Email</Form.Text>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="Direccion">
+              <Form.Label>Direccion</Form.Label>
+              <Form.Control type="text" placeholder="Direccion" />
+              <Form.Text className="text-muted">Direccion</Form.Text>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="departamento">
+              <Form.Label>departamento</Form.Label>
+              <Form.Select id="departamento">
+                <option value="" selected Disabled>
+                  Seleccione
+                </option>
+              </Form.Select>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="Ciudad">
+              <Form.Label>Ciudad</Form.Label>
+              <Form.Select id="Ciudad">
+                <option value="" selected Disabled>
+                  Seleccione
+                </option>
+              </Form.Select>
+            </Form.Group>
+          </Form>
         </Modal.Body>
         <Modal.Footer></Modal.Footer>
       </Modal>
