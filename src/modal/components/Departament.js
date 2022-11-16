@@ -1,12 +1,14 @@
-import { Fragment } from "react"
 import { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import {getDepartament} from "../../data/location"
 
 function Departament() {
-    const [departaments, SetDepartments] = useState([])
-
-    getDepartament().then((departaments) => SetDepartments(departaments));
+  const [departaments, SetDepartments] = useState([])
+  
+  useEffect(() => {
+        getDepartament().then((departaments) => SetDepartments(departaments));
+    })
+  
 
 
 
