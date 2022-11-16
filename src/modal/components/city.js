@@ -5,9 +5,9 @@ import { getCity } from "../../data/location";
 function GetCitys() {
   const [citys, Setcitys] = useState([]);
 
-  useEffect(() => {
+
     getCity("54").then((citys) => Setcitys(citys));
-  });
+
   return (
     <>
       <Form.Group className="mb-3" controlId="departamento">
