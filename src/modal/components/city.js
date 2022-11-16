@@ -9,7 +9,7 @@ function GetCitys() {
     useEffect(() => {
         getCity("54").then((citys) => Setcitys(citys));
     })
-    console.log(citys)
+    
     return (
       <>
         {/* <Form.Group className="mb-3" controlId="departamento">

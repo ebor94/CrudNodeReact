@@ -8,10 +8,6 @@ function Departament() {
   useEffect(() => {
         getDepartament().then((departaments) => SetDepartments(departaments));
     })
-  
-
-
-
     return (
  
         <Form.Group className="mb-3" controlId="departamento">

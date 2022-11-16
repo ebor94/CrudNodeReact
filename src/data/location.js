@@ -19,5 +19,7 @@ export const getCity = async (region) => {
     }).then((res) => {
         return res.data.REGPOSTAL.item;
     });
+console.log(res)
+
   return res;   
 }
