@@ -9,16 +9,17 @@ function GetCitys() {
     useEffect(() => {
         getCity("54").then((citys) => Setcitys(citys));
     })
+    console.log(citys)
     return (
       <>
-        <Form.Group className="mb-3" controlId="departamento">
+        {/* <Form.Group className="mb-3" controlId="departamento">
           <Form.Label>Ciudad</Form.Label>
           <Form.Select id="departamento">
             {citys.map(({ CITY_CODE, CITY_NAME }, index) => {
               return <option value={CITY_CODE}>{CITY_NAME}</option>;
             })}
           </Form.Select>
-        </Form.Group>
+        </Form.Group> */}
       </>
     );
 

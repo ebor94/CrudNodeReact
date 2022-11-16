@@ -17,7 +17,7 @@ export const getCity = async (region) => {
       opcion: 4,
       REGION: region 
     }).then((res) => {
-        return  res.data
+        return res.data.REGPOSTAL.item;
     });
   return res;   
 }
