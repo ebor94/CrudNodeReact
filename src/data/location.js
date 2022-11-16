@@ -12,10 +12,11 @@ export const getDepartament = async() => {
 }
 
 
-export const getCity = async (region) => {
+export const getCity = async (req) => {
+    console.log(req);
     const res = await axios.post(url, {
       opcion: 4,
-      REGION: region 
+      REGION: "54" 
     }).then((res) => {
         return res.data.REGPOSTAL.item;
     });
