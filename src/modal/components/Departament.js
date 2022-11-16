@@ -19,7 +19,7 @@ function Departament() {
           <Form.Select id="departamento">
             {departaments.map(({ BLAND, BEZEI}, index) => {
               return (
-                <option value={BLAND} selected Disabled>
+                <option value={BLAND}>
                   {BEZEI}
                 </option>
               );

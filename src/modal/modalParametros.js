@@ -3,7 +3,8 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { FiShoppingCart, FiHome, FiUser, FiDollarSign } from "react-icons/fi";
 import { Button } from "react-bootstrap";
-import  Departament  from "./components/Departament";
+import Departament from "./components/Departament";
+import GetCitys from "./components/city";
 
 function ModalParametros() {
   const [show, setShow] = useState(false);
@@ -180,14 +181,8 @@ const handleChange = (e) => {
               <Form.Text className="text-muted">Direccion</Form.Text>
             </Form.Group>
              <Departament />           
-            <Form.Group className="mb-3" controlId="Ciudad">
-              <Form.Label>Ciudad</Form.Label>
-              <Form.Select id="Ciudad">
-                <option value="" selected Disabled>
-                  Seleccione
-                </option>
-              </Form.Select>
-            </Form.Group>
+            <GetCitys region={'54'} />
+           
           </Form>
         </Modal.Body>
         <Button variant="danger" type="submit">
