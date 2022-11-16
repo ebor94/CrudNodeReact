@@ -3,7 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { FiShoppingCart, FiHome, FiUser, FiDollarSign } from "react-icons/fi";
 import { Button } from "react-bootstrap";
-import { Departament } from "./components";
+import  Departament  from "./components/Departament";
 
 function ModalParametros() {
   const [show, setShow] = useState(false);
