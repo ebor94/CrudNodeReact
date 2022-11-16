@@ -1,26 +1,28 @@
 import axios from "axios";
 let url = "https://www.ceramicaitalia.com/carritosap/sala/bd/clienteqas.php";
 
-export const getDepartament = async() => {
-    
-    const res = await axios.post(url, {
-        opcion : 5
-    }).then((res)=>{
-        return res.data.DPTOS.item;
+export const getDepartament = async () => {
+  const res = await axios
+    .post(url, {
+      opcion: 5,
+    })
+    .then((res) => {
+      return res.data.DPTOS.item;
     });
-    return res;
-}
-
+  return res;
+};
 
 export const getCity = async (req) => {
-    console.log(req);
-    const res = await axios.post(url, {
-      opcion: 4,
-      REGION: "54" 
-    }).then((res) => {
-        return res.data.REGPOSTAL.item;
+  //console.log(req);
+  const res = await axios
+    .post(url, {
+      opcion: "4",
+      region: "54",
+    })
+    .then((res) => {
+      return res.data.REGPOSTAL.item;
     });
-console.log(res)
+  console.log(res);
 
-  return res;   
-}
+  return res;
+};
