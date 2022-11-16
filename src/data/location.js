@@ -17,7 +17,7 @@ export const getCity = async (req) => {
   const res = await axios
     .post(url, {
       opcion: "4",
-      region: "54",
+      region: req,
     })
     .then((res) => {
       return res.data.REGPOSTAL.item;
