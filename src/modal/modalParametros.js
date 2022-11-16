@@ -181,8 +181,7 @@ const handleChange = (e) => {
               <Form.Text className="text-muted">Direccion</Form.Text>
             </Form.Group>
              <Departament />           
-            <GetCitys region={'54'} />
-           
+             <GetCitys />           
           </Form>
         </Modal.Body>
         <Button variant="danger" type="submit">
