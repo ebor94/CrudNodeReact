@@ -42,8 +42,6 @@ function ModalParametros() {
     }
   }, []);
 
-  console.log(departaments);
-  console.log(cart);
 
   return (
     <>
