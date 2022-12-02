@@ -41,7 +41,7 @@ function ModalParametros() {
       handleShow();
     }
   }, []);
-
+  console.log(cart);
 
   return (
     <>
