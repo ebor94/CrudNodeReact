@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import {AddDetail } from  "../data/products"
-
+import { Getdetails } from "../data/products";
+import ModalCart from "../modal/ModalCart";
 
 
 function LoadingButton(props) {
@@ -10,6 +11,8 @@ function LoadingButton(props) {
     const [isLoading, setLoading] = useState(false);
     const [message, setMessage] = useState("Añadir Producto")
     const [variant, setVariant] = useState("danger")
+    const [cart, Setcart] = useState([]);
+    const [show, setShow] = useState(false);
   
     
 
@@ -21,8 +24,11 @@ function LoadingButton(props) {
             setMessage(res);
             setVariant("success");
               setLoading(false);
-              if (res === "REGISTRO ACTUALIZADO") {
-                  setTimeout(props.handleClose(), 2000);
+            if (res === "REGISTRO ACTUALIZADO") {
+              Getdetails().then((cart) => Setcart(cart));
+              setTimeout(props.handleClose(), 2000);
+              setShow(true);
+              
               }
                        
                
@@ -37,13 +43,16 @@ function LoadingButton(props) {
     };
 
   return (
-    <Button
-      variant={variant}
-      disabled={isLoading}
-      onClick={!isLoading ? handleClick : null}
-    >
-      {isLoading ? "Espere…" : message}
-    </Button>
+    <fragment>
+      <Button
+        variant={variant}
+        disabled={isLoading}
+        onClick={!isLoading ? handleClick : null}
+      >
+        {isLoading ? "Espere…" : message}
+      </Button>
+      <ModalCart show={show} cart={cart} />
+    </fragment>
   );
 }
 
