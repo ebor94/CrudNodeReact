@@ -4,34 +4,46 @@ import Form from "react-bootstrap/Form";
 import { FiShoppingCart, FiHome, FiUser, FiDollarSign } from "react-icons/fi";
 import { Button } from "react-bootstrap";
 import Departament from "./components/Departament";
-import GetCitys from "./components/city";
+import ModalCart from "./ModalCart";
+import { Getdetails } from "../data/products";
+import { getDepartament } from "../data/location";
 
 function ModalParametros() {
   const [show, setShow] = useState(false);
   const [showClient, setShowClient] = useState(false);
+  const [cart, Setcart] = useState([]);
+  const [departaments, SetDepartments] = useState([]);
+
   const handleShow = () => setShow(true);
   const handleShowClient = () => setShowClient(true);
-  
-   const handleChangeClient = () => setShowClient(true);
-   
-   const handleCloseClient = () => {
-     setShowClient(false);
-   };
-    const handleClose = () => {       
-        setShow(false);
-    }
-    
-const handleChange = (e) => {
-   localStorage.store =  e.target.value
-  setShow(false);
-   window.location.reload(false);
-}
+  const handleChangeClient = () => setShowClient(true);
+
+  const handleCloseClient = () => {
+    setShowClient(false);
+  };
+  const handleClose = () => {
+    setShow(false);
+  };
+
+  const handleChange = (e) => {
+    localStorage.store = e.target.value;
+    setShow(false);
+    window.location.reload(false);
+  };
+
   useEffect(() => {
-   
-    if (typeof localStorage.store === "undefined" ||  localStorage.store === ""  ) {
+    Getdetails().then((cart) => Setcart(cart));
+    getDepartament().then((departaments) => SetDepartments(departaments));
+    if (
+      typeof localStorage.store === "undefined" ||
+      localStorage.store === ""
+    ) {
       handleShow();
     }
-      }, []);
+  }, []);
+
+  console.log(departaments);
+  console.log(cart);
 
   return (
     <>
@@ -60,6 +72,7 @@ const handleChange = (e) => {
       >
         <FiDollarSign />
       </a>
+      {/* <ModalCart /> */}
       <Modal
         show={show}
         onHide={handleClose}
@@ -90,7 +103,7 @@ const handleChange = (e) => {
           </Form>
         </Modal.Body>
       </Modal>
-
+{/* 
       <Modal
         show={showClient}
         onHide={handleCloseClient}
@@ -180,15 +193,15 @@ const handleChange = (e) => {
               <Form.Control type="text" placeholder="Direccion" />
               <Form.Text className="text-muted">Direccion</Form.Text>
             </Form.Group>
-             <Departament />           
-             <GetCitys />           
+            <Departament />
+            <GetCitys region={"54"} />
           </Form>
         </Modal.Body>
         <Button variant="danger" type="submit">
           Registrar cliente
         </Button>
         <Modal.Footer></Modal.Footer>
-      </Modal>
+      </Modal> */}
     </>
   );
 }

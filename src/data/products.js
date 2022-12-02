@@ -72,3 +72,17 @@ export const AddDetail = async (material, description, price, quantity, discount
      });
   return res;
 };
+
+
+export const Getdetails = async (req, res) => {
+  res = await axios
+    .post(url, {
+      code: localStorage.code,
+      opcion: 4,
+    })
+    .then((response) => {
+      return response.data;
+    });
+  
+  return res
+}

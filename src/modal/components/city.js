@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { getCity } from "../../data/location";
 
-function GetCitys() {
+function GetCitys(props) {
+    let region = props.region;
   const [citys, Setcitys] = useState([]);
 
   useEffect(() => {
-    getCity("54").then((citys) => Setcitys(citys));
+    getCity(region).then((citys) => Setcitys(citys));
   }, []);
   return (
     <>

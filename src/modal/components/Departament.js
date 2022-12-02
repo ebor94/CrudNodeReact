@@ -11,7 +11,9 @@ function Departament() {
   return (
     <Form.Group className="mb-3" controlId="departamento">
       <Form.Label>departamento</Form.Label>
-      <Form.Select id="departamento">
+      <Form.Select
+        id="departamento"        
+        >
         {departaments.map(({ BLAND, BEZEI }, index) => {
           return <option value={BLAND}>{BEZEI}</option>;
         })}
