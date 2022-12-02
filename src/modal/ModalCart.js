@@ -2,17 +2,17 @@ import Modal from "react-bootstrap/Modal";
 import React, { useEffect, useState } from "react";
 function ModalCart(props) {
   const [show, setShow] = useState(false);
-   const [cart, Setcart] = useState(props.cart);
+  const [cart, Setcart] = useState(props.cart);
 
   const handleShow = () => {
     setShow(props.show);
   };
 
   const handleClose = () => {
-      setShow(false);
+    setShow(false);
   };
-  
-   console.log(cart);
+
+  //  console.log(cart);
   return (
     <>
       <Modal
@@ -24,9 +24,7 @@ function ModalCart(props) {
         <Modal.Header closeButton>
           <Modal.Title> Detalle De su Pedido</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          {cart}
-        </Modal.Body>
+        <Modal.Body>{cart}</Modal.Body>
       </Modal>
     </>
   );
