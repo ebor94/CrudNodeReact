@@ -3,20 +3,15 @@ import React, { useEffect, useState } from "react";
 function ModalCart(props) {
   console.log("🚀 ~ file: ModalCart.js:4 ~ ModalCart ~ props", props);
   const [cart, Setcart] = useState(props.cart);
-  const [show, setShow] = useState(props.showCart);
-
-  const handleClose = () => {
-    setShow(false);
-  };
 
   //  console.log(cart);
   return (
     <>
       <Modal
-        show={show}
-        onHide={handleClose}
+        show={props.showCart}
+        onHide={props.handleClose}
         backdrop="static"
-        keyboard={true}
+        keyboard={false}
       >
         <Modal.Header closeButton>
           <Modal.Title> Detalle De su Pedido</Modal.Title>

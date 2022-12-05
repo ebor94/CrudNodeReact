@@ -116,7 +116,7 @@ function ModalParametros() {
         </Modal.Body>
       </Modal>
 
-      <ModalCart showCart={showCart}  />
+      <ModalCart showCart={showCart} handleClose={handleClose} />
       {/* 
       <Modal
         show={showClient}
