@@ -12,12 +12,7 @@ function ModalCart(props) {
   //  console.log(cart);
   return (
     <>
-      <Modal
-        show={props.showCart}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
+      <Modal show={props.showCart} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title> Detalle De su Pedido</Modal.Title>
         </Modal.Header>
