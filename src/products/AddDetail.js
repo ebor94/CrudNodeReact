@@ -22,14 +22,14 @@ function LoadingButton(props) {
           setVariant("success");
           setLoading(false);
           if (res === "REGISTRO ACTUALIZADO") {
-            Getdetails().then((cart) => Setcart(cart));
+             Getdetails().then((cart) => Setcart(cart));
             setShow(true);
             setTimeout(props.handleClose(), 2000);
+            {<ModalCart show={show} cart={cart} />;}
           }
         }
       );
-            console.log("🚀 ~ file: AddDetail.js:31~ useEffect ~ true", true);
-            console.log("🚀 ~ file: AddDetail.js:32 ~ useEffect ~ cart", cart);
+
      
     }
 
@@ -48,7 +48,7 @@ function LoadingButton(props) {
       >
         {isLoading ? "Espere…" : message}
       </Button>
-      <ModalCart show={show} cart={cart} />
+      
     </fragment>
   );
 }

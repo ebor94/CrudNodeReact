@@ -1,8 +1,8 @@
 import Modal from "react-bootstrap/Modal";
 import React, { useEffect, useState } from "react";
 function ModalCart(props) {
-  console.log("🚀 ~ file: ModalCart.js:4 ~ ModalCart ~ props", props)
-  const [show, setShow] = useState(false);
+ // console.log("🚀 ~ file: ModalCart.js:4 ~ ModalCart ~ props", props)
+  const [show, setShow] = useState(props.show);
   const [cart, Setcart] = useState(props.cart);
 
   const handleShow = () => {
@@ -17,7 +17,7 @@ function ModalCart(props) {
   return (
     <>
       <Modal
-        show={show}
+        show={handleShow}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
@@ -25,7 +25,7 @@ function ModalCart(props) {
         <Modal.Header closeButton>
           <Modal.Title> Detalle De su Pedido</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{cart}</Modal.Body>
+        <Modal.Body></Modal.Body>
       </Modal>
     </>
   );
