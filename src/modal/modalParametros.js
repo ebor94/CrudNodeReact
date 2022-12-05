@@ -15,8 +15,15 @@ function ModalParametros() {
   const [cart, Setcart] = useState([]);
   const [departaments, SetDepartments] = useState([]);
 
-  const handleShow = () => setShow(true);
-  const handleShowcart = () => setshowCart(true);
+  const handleShow = () => {
+    setShow(true)
+  };
+  const handleShowcart = () => {
+    setshowCart(true);
+  }
+   const handleClosecart = () => {
+     setshowCart(false);
+   };
   const handleShowClient = () => setShowClient(true);
   const handleChangeClient = () => setShowClient(true);
 
@@ -43,7 +50,7 @@ function ModalParametros() {
       handleShow();
     }
   }, []);
-  console.log(cart);
+
 
   return (
     <>
@@ -72,7 +79,7 @@ function ModalParametros() {
       >
         <FiDollarSign />
       </a>
-   
+
       <Modal
         show={show}
         onHide={handleClose}
@@ -104,7 +111,7 @@ function ModalParametros() {
         </Modal.Body>
       </Modal>
 
-      <ModalCart handleShowcart={handleShowcart} />
+      <ModalCart showCart={showCart} handleClosecart={handleClosecart} />
       {/* 
       <Modal
         show={showClient}
