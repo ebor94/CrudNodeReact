@@ -5,27 +5,20 @@ function ModalCart(props) {
   console.log("🚀 ~ file: ModalCart.js:4 ~ ModalCart ~ props", props);
   const [cart, Setcart] = useState(props.cart);
 
-
-  const handleClose = () => {
-     console.log("🚀 ~ file: ModalCart.js:11 ~ handleClose ~ showCart",  props.showCart );
-    props.showCart = false;
-    console.log("🚀 ~ file: ModalCart.js:11 ~ handleClose ~ showCart",  props.showCart );
-  };
   //  console.log(cart);
   return (
     <>
       <Modal
         show={props.showCart}
-        onHide={props.handleClose}
-        backdrop="true"
-        keyboard={false}
+        onHide={props.handleClosecart}
+        keyboard={true}
       >
         <Modal.Header closeButton>
           <Modal.Title> Detalle De su Pedido</Modal.Title>
         </Modal.Header>
         <Modal.Body></Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleClose}>Close</Button>
+          <Button onClick={props.handleClosecart}>Close</Button>
         </Modal.Footer>
       </Modal>
     </>
