@@ -10,13 +10,13 @@ import { getDepartament } from "../data/location";
 
 function ModalParametros() {
   const [show, setShow] = useState(false);
-   const [showCart, setshowCart] = useState(false);
+  const [showCart, setshowCart] = useState(false);
   const [showClient, setShowClient] = useState(false);
   const [cart, Setcart] = useState([]);
   const [departaments, SetDepartments] = useState([]);
 
   const handleShow = () => {
-    setShow(true)
+    setShow(true);
   };
   const handleShowpay = () => {
     setShow(true);
@@ -26,10 +26,10 @@ function ModalParametros() {
   };
   const handleShowcart = () => {
     setshowCart(true);
-  }
-   const handleClosecart = () => {
-     setshowCart(false);
-   };
+  };
+  const handleClosecart = () => {
+    setshowCart(false);
+  };
   const handleShowClient = () => setShowClient(true);
   const handleChangeClient = () => setShowClient(true);
 
@@ -57,12 +57,11 @@ function ModalParametros() {
     }
   }, []);
 
-
   return (
     <>
       <button
         className="btn btn-outline-primary rounded-0 btn-lg mt-2"
-        onClick={handleShow}
+        onClick={handleShowcart}
       >
         <FiShoppingCart />
       </button>
@@ -117,7 +116,7 @@ function ModalParametros() {
         </Modal.Body>
       </Modal>
 
-      <ModalCart show={show} handleClose={handleClose} />
+      <ModalCart showCart={showCart} handleClose={handleClose} />
       {/* 
       <Modal
         show={showClient}
