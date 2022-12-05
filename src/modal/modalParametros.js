@@ -18,6 +18,12 @@ function ModalParametros() {
   const handleShow = () => {
     setShow(true)
   };
+  const handleShowpay = () => {
+    setShow(true);
+  };
+  const handleClosepay = () => {
+    setshowCart(false);
+  };
   const handleShowcart = () => {
     setshowCart(true);
   }
@@ -56,7 +62,7 @@ function ModalParametros() {
     <>
       <button
         className="btn btn-outline-primary rounded-0 btn-lg mt-2"
-        onClick={handleShowcart}
+        onClick={handleShow}
       >
         <FiShoppingCart />
       </button>
@@ -73,12 +79,12 @@ function ModalParametros() {
       >
         <FiUser />
       </button>
-      <a
+      <button
         className="btn btn-outline-info rounded-0 btn-lg mt-2"
-        href="https://www.ceramicaitalia.com/carritosap/sala/pedido.php"
+        onClick={handleShowClient}
       >
         <FiDollarSign />
-      </a>
+      </button>
 
       <Modal
         show={show}
@@ -111,7 +117,7 @@ function ModalParametros() {
         </Modal.Body>
       </Modal>
 
-      <ModalCart showCart={showCart} handleClosecart={handleClosecart} />
+      <ModalCart handleShow={handleShow} handleClose={handleClose} />
       {/* 
       <Modal
         show={showClient}
