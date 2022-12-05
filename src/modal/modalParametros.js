@@ -25,6 +25,7 @@ function ModalParametros() {
     setshowCart(false);
   };
   const handleShowcart = () => {
+    Getdetails().then((cart) => Setcart(cart));
     setshowCart(true);
   };
   const handleClosecart = () => {
@@ -116,7 +117,11 @@ function ModalParametros() {
         </Modal.Body>
       </Modal>
 
-      <ModalCart showCart={showCart} handleClosecart={handleClosecart} />
+      <ModalCart
+        showCart={showCart}
+        cart={cart}
+        handleClosecart={handleClosecart}
+      />
       {/* 
       <Modal
         show={showClient}

@@ -2,8 +2,8 @@ import Modal from "react-bootstrap/Modal";
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 function ModalCart(props) {
-  console.log("🚀 ~ file: ModalCart.js:4 ~ ModalCart ~ props", props);
   const [cart, Setcart] = useState(props.cart);
+  console.log("🚀 ~ file: ModalCart.js:7 ~ ModalCart ~ cart", cart);
 
   //  console.log(cart);
   return (
