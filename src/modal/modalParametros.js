@@ -10,11 +10,13 @@ import { getDepartament } from "../data/location";
 
 function ModalParametros() {
   const [show, setShow] = useState(false);
+   const [showCart, setshowCart] = useState(false);
   const [showClient, setShowClient] = useState(false);
   const [cart, Setcart] = useState([]);
   const [departaments, SetDepartments] = useState([]);
 
   const handleShow = () => setShow(true);
+  const handleShowcart = () => setshowCart(true);
   const handleShowClient = () => setShowClient(true);
   const handleChangeClient = () => setShowClient(true);
 
@@ -45,12 +47,12 @@ function ModalParametros() {
 
   return (
     <>
-      <a
-        className="btn btn-outline-info rounded-0 btn-lg mt-2"
-        href="https://www.ceramicaitalia.com/carritosap/sala/pedido.php"
+      <button
+        className="btn btn-outline-primary rounded-0 btn-lg mt-2"
+        onClick={handleShowcart}
       >
         <FiShoppingCart />
-      </a>
+      </button>
       <button
         className="btn btn-outline-primary rounded-0 btn-lg mt-2"
         onClick={handleShow}
@@ -70,7 +72,7 @@ function ModalParametros() {
       >
         <FiDollarSign />
       </a>
-      {/* <ModalCart /> */}
+   
       <Modal
         show={show}
         onHide={handleClose}
@@ -101,7 +103,9 @@ function ModalParametros() {
           </Form>
         </Modal.Body>
       </Modal>
-{/* 
+
+      <ModalCart handleShowcart={handleShowcart} />
+      {/* 
       <Modal
         show={showClient}
         onHide={handleCloseClient}

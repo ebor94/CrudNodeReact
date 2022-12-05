@@ -5,9 +5,7 @@ function ModalCart(props) {
   const [show, setShow] = useState(props.show);
   const [cart, Setcart] = useState(props.cart);
 
-  const handleShow = () => {
-    setShow(props.show);
-  };
+ 
 
   const handleClose = () => {
     setShow(false);
@@ -17,7 +15,7 @@ function ModalCart(props) {
   return (
     <>
       <Modal
-        show={handleShow}
+        show={props.handleShowcart}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}

@@ -36,7 +36,7 @@ function ModalCustomer() {
 
   return (
     <>
-      <Modal
+     <Modal
         show={showClient}
         onHide={handleCloseClient}
         backdrop="static"
@@ -126,14 +126,7 @@ function ModalCustomer() {
               <Form.Text className="text-muted">Direccion</Form.Text>
             </Form.Group>
             <Departament />
-            <Form.Group className="mb-3" controlId="Ciudad">
-              <Form.Label>Ciudad</Form.Label>
-              <Form.Select id="Ciudad">
-                <option value="" selected Disabled>
-                  Seleccione
-                </option>
-              </Form.Select>
-            </Form.Group>
+            {/* <GetCitys region={"54"} /> */}
           </Form>
         </Modal.Body>
         <Button variant="danger" type="submit">

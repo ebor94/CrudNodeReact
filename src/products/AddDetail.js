@@ -25,7 +25,7 @@ function LoadingButton(props) {
              Getdetails().then((cart) => Setcart(cart));
             setShow(true);
             setTimeout(props.handleClose(), 2000);
-            {<ModalCart show={show} cart={cart} />;}
+           
           }
         }
       );
