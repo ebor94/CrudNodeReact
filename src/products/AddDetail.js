@@ -23,8 +23,9 @@ function LoadingButton(props) {
           setLoading(false);
           if (res === "REGISTRO ACTUALIZADO") {
             Getdetails().then((cart) => Setcart(cart));
+              setShow(true);
             setTimeout(props.handleClose(), 2000);
-            setShow(true);
+          
           }
         }
       );
@@ -35,7 +36,8 @@ function LoadingButton(props) {
     setLoading(true);
   };
 
-  console.log(cart);
+  console.log("🚀 ~ file: AddDetail.js:40 ~ LoadingButton ~ cart", cart)
+  console.log("🚀 ~ file: AddDetail.js:40 ~ LoadingButton ~ show", show)
 
   return (
     <fragment>
