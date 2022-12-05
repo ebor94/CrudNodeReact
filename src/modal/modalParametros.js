@@ -25,8 +25,10 @@ function ModalParametros() {
     setshowCart(false);
   };
   const handleShowcart = () => {
-    Getdetails().then((cart) => Setcart(cart));
-    setshowCart(true);
+    if (cart.length === 0) {
+       Getdetails().then((cart) => Setcart(cart));
+    }
+     setshowCart(true);
   };
   const handleClosecart = () => {
     setshowCart(false);
@@ -48,7 +50,7 @@ function ModalParametros() {
   };
 
   useEffect(() => {
-    Getdetails().then((cart) => Setcart(cart));
+     Getdetails().then((cart) => Setcart(cart));
     getDepartament().then((departaments) => SetDepartments(departaments));
     if (
       typeof localStorage.store === "undefined" ||
@@ -56,6 +58,7 @@ function ModalParametros() {
     ) {
       handleShow();
     }
+   
   }, []);
 
   return (
