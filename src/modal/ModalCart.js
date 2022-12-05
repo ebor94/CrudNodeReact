@@ -11,7 +11,7 @@ function ModalCart(props) {
   return (
     <>
       <Modal
-        show={props.handleShow}
+        show={props.show}
         onHide={props.handleClose}
         backdrop="static"
         keyboard={false}
