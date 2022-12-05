@@ -23,21 +23,21 @@ function LoadingButton(props) {
           setLoading(false);
           if (res === "REGISTRO ACTUALIZADO") {
             Getdetails().then((cart) => Setcart(cart));
-              setShow(true);
+            setShow(true);
             setTimeout(props.handleClose(), 2000);
-          
           }
         }
       );
+            console.log("🚀 ~ file: AddDetail.js:31~ useEffect ~ true", true);
+            console.log("🚀 ~ file: AddDetail.js:32 ~ useEffect ~ cart", cart);
+     
     }
+
   }, [isLoading]);
 
   const handleClick = () => {
     setLoading(true);
   };
-
-  console.log("🚀 ~ file: AddDetail.js:40 ~ LoadingButton ~ cart", cart)
-  console.log("🚀 ~ file: AddDetail.js:40 ~ LoadingButton ~ show", show)
 
   return (
     <fragment>
