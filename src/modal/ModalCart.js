@@ -5,6 +5,12 @@ function ModalCart(props) {
   console.log("🚀 ~ file: ModalCart.js:4 ~ ModalCart ~ props", props);
   const [cart, Setcart] = useState(props.cart);
 
+
+  const handleClose = () => {
+     console.log("🚀 ~ file: ModalCart.js:11 ~ handleClose ~ showCart",  props.showCart );
+    props.showCart = false;
+    console.log("🚀 ~ file: ModalCart.js:11 ~ handleClose ~ showCart",  props.showCart );
+  };
   //  console.log(cart);
   return (
     <>
@@ -19,7 +25,7 @@ function ModalCart(props) {
         </Modal.Header>
         <Modal.Body></Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.handleClose}>Close</Button>
+          <Button onClick={handleClose}>Close</Button>
         </Modal.Footer>
       </Modal>
     </>
