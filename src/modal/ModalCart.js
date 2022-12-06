@@ -17,11 +17,11 @@ function ModalCart(props) {
           <Modal.Title> Detalle De su Pedido</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {props.cart.COTDETALLE.item.map(({}, index) => {
+          {/* {props.cart.COTDETALLE.item.map(({}, index) => {
             return (
               <>
             </>
-          )})}
+          )})} */}
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.handleClosecart}>Close</Button>
