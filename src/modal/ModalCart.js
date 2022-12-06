@@ -16,7 +16,13 @@ function ModalCart(props) {
         <Modal.Header closeButton>
           <Modal.Title> Detalle De su Pedido</Modal.Title>
         </Modal.Header>
-        <Modal.Body></Modal.Body>
+        <Modal.Body>
+          {props.cart.COTDETALLE.item.map(({}, index) => {
+            return (
+              <>
+            </>
+          )})}
+        </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.handleClosecart}>Close</Button>
         </Modal.Footer>

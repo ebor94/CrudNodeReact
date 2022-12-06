@@ -58,9 +58,7 @@ function Getproducts() {
       (product) =>
         SENSACION.length === 0 || SENSACION.includes(product.SENSACION)
     )
-    .filter(
-      (product) => TAMANO.length === 0 || TAMANO.includes(product.TAMANO)
-    )
+    .filter((product) => TAMANO.length === 0 || TAMANO.includes(product.TAMANO))
     .filter(
       (product) =>
         AREACOMERCIAL.length === 0 ||
@@ -73,7 +71,7 @@ function Getproducts() {
     )
     .filter(
       (product) =>
-        AREAEXTERIOR.length === 0 || AREAEXTERIOR.includes(product.EXTERIOR)
+        AREAEXTERIOR.length === 0 || AREAEXTERIOR.includes(product.AREAEXTERIOR)
     )
     .filter(
       (product) =>
@@ -82,10 +80,9 @@ function Getproducts() {
     .filter(
       (product) =>
         SINACCEXTE.length === 0 || SINACCEXTE.includes(product.SINACCEXTE)
-  )
-  .filter(
-      (product) =>
-        ESPACIO.length === 0 || ESPACIO.includes(product.ESPACIO)
+    )
+    .filter(
+      (product) => ESPACIO.length === 0 || ESPACIO.includes(product.ESPACIO)
     );
 
   const handleuso = (e) => {
