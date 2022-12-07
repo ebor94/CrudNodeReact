@@ -5,42 +5,14 @@ import { FiShoppingCart, FiHome, FiUser, FiDollarSign } from "react-icons/fi";
 import { Button } from "react-bootstrap";
 import Departament from "./components/Departament"
 
-function ModalCustomer() {
-  const [show, setShow] = useState(false);
-  const [showClient, setShowClient] = useState(false);
-  const handleShow = () => setShow(true);
-  const handleShowClient = () => setShowClient(true);
-
-  const handleChangeClient = () => setShowClient(true);
-
-  const handleCloseClient = () => {
-    setShowClient(false);
-  };
-  const handleClose = () => {
-    setShow(false);
-  };
-
-  const handleChange = (e) => {
-    localStorage.store = e.target.value;
-    setShow(false);
-    window.location.reload(false);
-  };
-  useEffect(() => {
-    if (
-      typeof localStorage.store === "undefined" ||
-      localStorage.store === ""
-    ) {
-      handleShow();
-    }
-  }, []);
-
+function ModalCustomer(props) {
+ 
   return (
     <>
-     <Modal
-        show={showClient}
-        onHide={handleCloseClient}
-        backdrop="static"
-        keyboard={false}
+      <Modal
+        show={props.showClient}
+        onHide={props.handleCloseClient}
+        keyboard={true}
       >
         <Modal.Header closeButton>
           <Modal.Title>

@@ -5,6 +5,7 @@ import { FiShoppingCart, FiHome, FiUser, FiDollarSign } from "react-icons/fi";
 import { Button } from "react-bootstrap";
 import Departament from "./components/Departament";
 import ModalCart from "./ModalCart";
+import ModalCustomer from "./ModalCustomer";
 import { Getdetails } from "../data/products";
 import { getDepartament } from "../data/location";
 
@@ -26,9 +27,9 @@ function ModalParametros() {
   };
   const handleShowcart = () => {
     if (cart.length === 0) {
-       Getdetails().then((cart) => Setcart(cart));
+      Getdetails().then((cart) => Setcart(cart));
     }
-     setshowCart(true);
+    setshowCart(true);
   };
   const handleClosecart = () => {
     setshowCart(false);
@@ -50,7 +51,7 @@ function ModalParametros() {
   };
 
   useEffect(() => {
-     Getdetails().then((cart) => Setcart(cart));
+    Getdetails().then((cart) => Setcart(cart));
     getDepartament().then((departaments) => SetDepartments(departaments));
     if (
       typeof localStorage.store === "undefined" ||
@@ -58,7 +59,6 @@ function ModalParametros() {
     ) {
       handleShow();
     }
-   
   }, []);
 
   return (
@@ -124,6 +124,10 @@ function ModalParametros() {
         showCart={showCart}
         cart={cart}
         handleClosecart={handleClosecart}
+      />
+      <ModalCustomer
+        showClient={showClient}
+        handleCloseClient={handleCloseClient}
       />
       {/* 
       <Modal
