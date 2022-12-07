@@ -66,26 +66,26 @@ function ModalParametros() {
   return (
     <>
       <button
-        className="btn btn-outline-white rounded-0 btn-lg mt-2"
+        className="btn btn-outline-light rounded-0 btn-lg mt-2"
         onClick={handleShowcart}
       >
         <FiShoppingCart />
       </button>
       <button
-        className="btn btn-outline-white rounded-0 btn-lg mt-2"
+        className="btn btn-outline-light rounded-0 btn-lg mt-2"
         onClick={handleShow}
       >
         <FiHome />
         {localStorage.store}
       </button>
       <button
-        className="btn btn-outline-white rounded-0 btn-lg mt-2"
+        className="btn btn-outline-light rounded-0 btn-lg mt-2"
         onClick={handleShowClient}
       >
         <FiUser />
       </button>
       <button
-        className="btn btn-outline-white rounded-0 btn-lg mt-2"
+        className="btn btn-outline-light rounded-0 btn-lg mt-2"
         onClick={handleShowpay}
       >
         <FiDollarSign />
