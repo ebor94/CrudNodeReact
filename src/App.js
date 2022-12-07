@@ -14,9 +14,9 @@ function App() {
         <Container>
           <Navbar.Brand href="#">
             <img src={logo} className="App-logo" alt="logo" />
+            <ModalParametros />
           </Navbar.Brand>
         </Container>
-        <ModalParametros />
       </Navbar>
       <Getproducts />
     </div>

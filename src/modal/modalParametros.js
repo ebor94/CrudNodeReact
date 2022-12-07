@@ -66,26 +66,26 @@ function ModalParametros() {
   return (
     <>
       <button
-        className="btn btn-outline-primary rounded-0 btn-lg mt-2"
+        className="btn btn-outline-white rounded-0 btn-lg mt-2"
         onClick={handleShowcart}
       >
         <FiShoppingCart />
       </button>
       <button
-        className="btn btn-outline-primary rounded-0 btn-lg mt-2"
+        className="btn btn-outline-white rounded-0 btn-lg mt-2"
         onClick={handleShow}
       >
         <FiHome />
         {localStorage.store}
       </button>
       <button
-        className="btn btn-outline-primary rounded-0 btn-lg mt-2"
+        className="btn btn-outline-white rounded-0 btn-lg mt-2"
         onClick={handleShowClient}
       >
         <FiUser />
       </button>
       <button
-        className="btn btn-outline-info rounded-0 btn-lg mt-2"
+        className="btn btn-outline-white rounded-0 btn-lg mt-2"
         onClick={handleShowpay}
       >
         <FiDollarSign />
@@ -131,12 +131,7 @@ function ModalParametros() {
         showClient={showClient}
         handleCloseClient={handleCloseClient}
       />
-      <ModalPay
-        showPay={showPay}
-        handleClosePay={handleClosePay}
-      />
-     
-      
+      <ModalPay showPay={showPay} handleClosePay={handleClosePay} />
     </>
   );
 }
