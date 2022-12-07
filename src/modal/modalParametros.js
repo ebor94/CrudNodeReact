@@ -6,12 +6,14 @@ import { Button } from "react-bootstrap";
 import Departament from "./components/Departament";
 import ModalCart from "./ModalCart";
 import ModalCustomer from "./ModalCustomer";
+import ModalPay from "./ModalPayment";
 import { Getdetails } from "../data/products";
 import { getDepartament } from "../data/location";
 
 function ModalParametros() {
   const [show, setShow] = useState(false);
   const [showCart, setshowCart] = useState(false);
+  const [showPay, setshowPay] = useState(false);
   const [showClient, setShowClient] = useState(false);
   const [cart, Setcart] = useState([]);
   const [departaments, SetDepartments] = useState([]);
@@ -20,10 +22,10 @@ function ModalParametros() {
     setShow(true);
   };
   const handleShowpay = () => {
-    setShow(true);
+    setshowPay(true);
   };
-  const handleClosepay = () => {
-    setshowCart(false);
+  const handleClosePay = () => {
+    setshowPay(false);
   };
   const handleShowcart = () => {
     if (cart.length === 0) {
@@ -84,7 +86,7 @@ function ModalParametros() {
       </button>
       <button
         className="btn btn-outline-info rounded-0 btn-lg mt-2"
-        onClick={handleShowClient}
+        onClick={handleShowpay}
       >
         <FiDollarSign />
       </button>
@@ -129,6 +131,7 @@ function ModalParametros() {
         showClient={showClient}
         handleCloseClient={handleCloseClient}
       />
+      <ModalPay showPay={showPay} handleClosePay={handleClosePay} />
       {/* 
       <Modal
         show={showClient}
