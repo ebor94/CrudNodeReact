@@ -38,8 +38,8 @@ function CheckInlineExample(props) {
 
   return (
     <Col md={6} xs={12} className="mt-3">
-      <Card>
-        <Card.Header className="bg-secondary text-white">
+      <Card className="rounded-0 card">
+        <Card.Header className="bg-secondary text-white rounded-0 ">
           ¿Cuál es su area a remodelar?{" "}
         </Card.Header>
         <Card.Body>

@@ -15,7 +15,7 @@ function Tipologia() {
     <div className="row">
       <Col xs={12} md={3} className="mt-3">
         <Card className="rounded-0 card">
-          <Card.Header className="bg-secondary ">
+          <Card.Header className="bg-secondary text-white rounded-0 ">
             ¿Tipologia De producto?
           </Card.Header>
           <Card.Body>

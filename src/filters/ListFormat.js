@@ -16,8 +16,8 @@ function GetFormats(props) {
 
   return (
     <Col xs={12} md={12} className="mt-3">
-      <Card>
-        <Card.Header className="bg-secondary text-white">
+      <Card className="rounded-0 card">
+        <Card.Header className="bg-secondary text-white rounded-0 ">
           Filtro por formato{" "}
         </Card.Header>
         <Card.Body>

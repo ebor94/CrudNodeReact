@@ -11,9 +11,12 @@ function Spaces(props) {
   const { handleSpace } = props;
   return (
     <div className="col-12 mt-3">
-      <Accordion>
-        <Accordion.Item eventKey="0">
-          <Accordion.Header className="bg-secondary text-white">
+      <Accordion className="bg-secondary text-white rounded-0 ">
+        <Accordion.Item
+          eventKey="0"
+          className="bg-secondary text-white rounded-0 "
+        >
+          <Accordion.Header className="bg-secondary text-white rounded-0 ">
             ¿Cuál es su espacio a remodelar?
           </Accordion.Header>
           <Accordion.Body>
