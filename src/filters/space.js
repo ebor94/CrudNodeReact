@@ -13,7 +13,7 @@ function Spaces(props) {
     <div className="col-12 mt-3">
       <Accordion>
         <Accordion.Item eventKey="0">
-          <Accordion.Header className="bg-danger text-white">
+          <Accordion.Header className="bg-secondary text-white">
             ¿Cuál es su espacio a remodelar?
           </Accordion.Header>
           <Accordion.Body>

@@ -15,7 +15,7 @@ function GetTipologias(props) {
   return (
     <Col xs={12} md={6} className="mt-3">
       <Card>
-        <Card.Header className="bg-success text-white">
+        <Card.Header className="bg-secondary text-white">
           Seleccione Tipologias
         </Card.Header>
         <Card.Body>

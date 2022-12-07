@@ -20,7 +20,7 @@ function Accesosintext(props) {
   return (
     <Col xs={12} md={3} className="mt-3">
       <Card>
-        <Card.Header className="bg-info text-white">
+        <Card.Header className="bg-secondary text-white">
           ¿Tipo de acceso?
         </Card.Header>
         <Card.Body>

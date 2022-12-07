@@ -15,7 +15,7 @@ function Switchsesation() {
     <div className="row">
       <Col xs={12} md={3} className="mt-3">
         <Card>
-          <Card.Header className="bg-warning ">
+          <Card.Header className="bg-secondary ">
             Sensacion De producto?
           </Card.Header>
           <Card.Body>

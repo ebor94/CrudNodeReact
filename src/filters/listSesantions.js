@@ -16,7 +16,9 @@ function GetSensationss(props) {
   return (
     <Col xs={12} md={6} className="mt-3">
       <Card>
-        <Card.Header className="bg-success text-white">Sensaciones</Card.Header>
+        <Card.Header className="bg-secondary text-white">
+          Sensaciones
+        </Card.Header>
         <Card.Body>
           <Form>
             <div className="mb-3">

@@ -15,7 +15,7 @@ function SwitchFormat() {
     <div className="row">
       <Col xs={12} md={3} className="mt-3">
         <Card>
-          <Card.Header className="bg-warning ">Filtro por tamaño</Card.Header>
+          <Card.Header className="bg-secondary ">Filtro por tamaño</Card.Header>
           <Card.Body>
             <Form>
               <Form.Group className="mb-3" controlId="Format">
