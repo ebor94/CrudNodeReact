@@ -10,11 +10,11 @@ import ModalParametros from "./modal/modalParametros";
 function App() {
   return (
     <div className="App">
-      <Navbar fixed="top" class="navbar bg-danger">
+      <Navbar fixed="top" sticky="top" bg="danger">
         <Container>
-          <Navbar.Brand href="#">         
+          <Navbar.Brand href="#">
             <img src={logo} className="App-logo" alt="logo" />
-          </Navbar.Brand>         
+          </Navbar.Brand>
         </Container>
       </Navbar>
       <ModalParametros />
