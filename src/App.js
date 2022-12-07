@@ -1,6 +1,8 @@
 import logo from "./img/cisa.png";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import "./App.css";
 //import CompShowsBlogs from './blog/ShowBlogs';
 
@@ -13,10 +15,15 @@ function App() {
       <Navbar fixed="top" sticky="top" bg="danger">
         <Container>
           <Navbar.Brand href="#">
-            <img src={logo} className="App-logo" alt="logo" />
-            <center>
-              <ModalParametros centered />
-            </center>
+            <Row className="justify-content-md-center">
+              <Col md={4}>
+                <img src={logo} className="App-logo" alt="logo" />
+              </Col>
+
+              <Col md={{ span: 4, offset: 4 }}>
+                <ModalParametros />
+              </Col>
+            </Row>
           </Navbar.Brand>
         </Container>
       </Navbar>
