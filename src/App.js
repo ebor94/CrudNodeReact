@@ -14,7 +14,9 @@ function App() {
         <Container>
           <Navbar.Brand href="#">
             <img src={logo} className="App-logo" alt="logo" />
-            <ModalParametros centered />
+            <center>
+              <ModalParametros centered />
+            </center>
           </Navbar.Brand>
         </Container>
       </Navbar>
