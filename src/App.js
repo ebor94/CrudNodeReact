@@ -10,11 +10,11 @@ function App() {
   
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header navbar navbar-default navbar-fixed-top">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <ModalParametros />
-       <Getproducts />
+      <Getproducts />
     </div>
   );
 }
