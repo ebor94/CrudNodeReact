@@ -26,8 +26,8 @@ function SwitchExample(props) {
 
   return (
     <Col xs={12} md={3} className="mt-3">
-      <Card>
-        <Card.Header className="bg-secondary ">
+      <Card className="rounded-0 card">
+        <Card.Header className="bg-secondary text-white ">
           ¿Que tipo superficie va a revestir?
         </Card.Header>
         <Card.Body>
