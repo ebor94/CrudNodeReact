@@ -20,7 +20,7 @@ function App() {
                 <img src={logo} className="App-logo" alt="logo" />
               </Col>
 
-              <Col md={{ span: 4, offset: 4 }}>
+              <Col className="mt-5" md={{ span: 4, offset: 6}}>
                 <ModalParametros />
               </Col>
             </Row>
