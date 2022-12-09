@@ -24,7 +24,8 @@ function LoadingButton(props) {
           if (res === "REGISTRO ACTUALIZADO") {
              Getdetails().then((cart) => Setcart(cart));
             setShow(true);
-            setTimeout(props.handleClose(), 3000);
+            props.handleClose();
+            setLoading(false);
            
           }
         }
