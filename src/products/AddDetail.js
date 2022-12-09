@@ -22,18 +22,14 @@ function LoadingButton(props) {
           setVariant("success");
           setLoading(false);
           if (res === "REGISTRO ACTUALIZADO") {
-             Getdetails().then((cart) => Setcart(cart));
+            Getdetails().then((cart) => Setcart(cart));
             setShow(true);
             props.handleClose();
-            setLoading(false);
-           
+           // setTimeout(props.handleClose(), 1000);
           }
         }
       );
-
-     
     }
-
   }, [isLoading]);
 
   const handleClick = () => {
@@ -49,7 +45,6 @@ function LoadingButton(props) {
       >
         {isLoading ? "Espere…" : message}
       </Button>
-      
     </fragment>
   );
 }
