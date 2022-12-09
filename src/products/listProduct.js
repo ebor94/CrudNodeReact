@@ -45,9 +45,9 @@ function ProductList({ filteredProduct }) {
                     <ListGroup.Item>{TAMANO}</ListGroup.Item>
                     <ListGroup.Item>Disponible {CANTIDAD}</ListGroup.Item>
                   </ListGroup>
-                  <div className="row mt-1">
+                  {/* <div className="row mt-1">
                     <ProductPrice MATERIAL={MATERIAL} />
-                  </div>
+                  </div> */}
                   <div className="row mt-2">
                     <Addtocart MATERIAL={MATERIAL}  DESCRIPCION={DESCRIPCION } CANTIDAD = {CANTIDAD}  />
                   </div>
