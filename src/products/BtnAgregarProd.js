@@ -4,28 +4,32 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Figure from "react-bootstrap/Figure";
 import { getPrice } from "../data/products";
-import  LoadingButton  from "./AddDetail"
+import LoadingButton from "./AddDetail"
+import ModalComplements from "../modal/ModalComplement"
  import Container from "react-bootstrap/Container";
  import Row from "react-bootstrap/Row";
  import Col from "react-bootstrap/Col";
 
 function Addtocart(props) {
-    const [show, setShow] = useState(false);
-    const [price, setPrice] = useState(0);
-    const [quantity, setQuantity] = useState(1);
+  const [show, setShow] = useState(false);
+  const [showcomplement, setShowcomplement] = useState(false);
+  const [price, setPrice] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
-  const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  const handleClose = () => {
+    setShowcomplement(true);
+    setShow(false);
 
-    useEffect(() => {
-         getPrice(props.MATERIAL).then((price) => {
-           setPrice(price);
-          
-         });
-       
-    }); 
-    
-   
+   }
+  const handleClose2 = () => setShow(false);
+  const handleCloseComplemets = () => setShowcomplement(false);
+  const handleShow = () => setShow(true);
+
+  useEffect(() => {
+    getPrice(props.MATERIAL).then((price) => {
+      setPrice(price);
+    });
+  });
 
   return (
     <>
@@ -33,7 +37,7 @@ function Addtocart(props) {
         Agregar Producto
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose2}>
         <Modal.Header closeButton>
           <Modal.Title className="text-center">{props.DESCRIPCION}</Modal.Title>
         </Modal.Header>
@@ -83,9 +87,14 @@ function Addtocart(props) {
             code={props.MATERIAL}
             name={props.DESCRIPCION}
             handleClose={handleClose}
-            />
+          />
         </Modal.Footer>
       </Modal>
+      <ModalComplements
+        showcomplement={showcomplement}
+        handleCloseComplemets={handleCloseComplemets}
+        quantity={quantity}
+      />
     </>
   );
 }
